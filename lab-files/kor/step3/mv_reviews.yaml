@@ -1,0 +1,80 @@
+version: 1.1
+comment: "Wanderbricks 리뷰(Review) Metric View. 1행 = 리뷰 1건 (silver_fact_reviews, soft-delete 제외), 작성 고객 정보는 silver_dim_users 와 조인. 예약 1건에 리뷰가 여러 개일 수 있어 예약 Metric View 와 분리함. 데이터 기간: 2023-03 ~ 2025-07-31. 고객 국가 값은 대문자 전체 국가명 (예: UNITED STATES, SOUTH KOREA)."
+source: <your_name>_wanderbricks_marketing.default.silver_fact_reviews
+joins:
+  - name: dim_user
+    source: <your_name>_wanderbricks_marketing.default.silver_dim_users
+    'on': source.user_id = dim_user.user_id
+dimensions:
+  - name: 리뷰일
+    expr: CAST(source.created_at AS DATE)
+    comment: 리뷰가 작성된 날짜(created_at).
+    display_name: 리뷰일
+    synonyms: [리뷰 날짜, 작성일, review date]
+    format:
+      type: date
+      date_format: year_month_day
+  - name: 리뷰 월
+    expr: "DATE_TRUNC('MONTH', source.created_at)"
+    comment: 리뷰가 작성된 월.
+    display_name: 리뷰 월
+    synonyms: [리뷰월, 월별, review month]
+    format:
+      type: date
+      date_format: locale_short_month
+  - name: 평점
+    expr: source.rating
+    comment: 리뷰 평점 (1~5 정수).
+    display_name: 평점
+    synonyms: [별점, rating, 점수]
+  - name: 고객 국가
+    expr: dim_user.country
+    comment: 리뷰 작성 고객의 국가. 대문자 전체 국가명 (예 UNITED STATES, SOUTH KOREA). 국가 코드가 아님.
+    display_name: 고객 국가
+    synonyms: [국가, 나라, country, 시장]
+  - name: 고객 유형
+    expr: dim_user.user_type
+    comment: "리뷰 작성 고객 유형. 값: individual(개인 고객) / business(비즈니스 고객)."
+    display_name: 고객 유형
+    synonyms: [고객 세그먼트, 세그먼트, user type]
+measures:
+  - name: 리뷰 수
+    expr: COUNT(source.review_id)
+    comment: 리뷰 건수 (soft-delete 리뷰 제외).
+    display_name: 리뷰 수
+    synonyms: [리뷰 건수, 후기 수, review count]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 0
+  - name: 평균 평점
+    expr: AVG(source.rating)
+    comment: 리뷰 평점(1~5) 평균.
+    display_name: 평균 평점
+    synonyms: [평균 별점, 만족도, average rating]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 2
+  - name: 저평점 비율
+    expr: "COUNT(source.review_id) FILTER (WHERE source.rating <= 2) / COUNT(source.review_id)"
+    comment: 전체 리뷰 중 평점 2점 이하 리뷰의 비율.
+    display_name: 저평점 비율
+    synonyms: [불만족 비율, 낮은 평점 비율, low rating share]
+    format:
+      type: percentage
+      decimal_places:
+        type: exact
+        places: 1
+  - name: 리뷰 작성 고객 수
+    expr: COUNT(DISTINCT source.user_id)
+    comment: 리뷰를 1건 이상 작성한 고유 고객 수.
+    display_name: 리뷰 작성 고객 수
+    synonyms: [리뷰어 수, reviewers]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 0

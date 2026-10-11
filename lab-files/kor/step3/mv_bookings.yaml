@@ -1,0 +1,124 @@
+version: 1.1
+comment: "Wanderbricks 예약(Booking) Metric View. 1행 = 예약 1건 (silver_fact_bookings), 예약 고객 정보는 silver_dim_users 와 조인. 데이터 기간: 2022-12 ~ 2025-07-30 (예약 생성일 기준, 최신일 2025-07-30). 고객 국가 값은 대문자 전체 국가명 (예: UNITED STATES, SOUTH KOREA, INDIA). 예약 상태: pending / confirmed / cancelled / completed."
+source: <your_name>_wanderbricks_marketing.default.silver_fact_bookings
+joins:
+  - name: dim_user
+    source: <your_name>_wanderbricks_marketing.default.silver_dim_users
+    'on': source.user_id = dim_user.user_id
+dimensions:
+  - name: 예약일
+    expr: CAST(source.created_at AS DATE)
+    comment: 예약이 생성된 날짜 (created_at 기준). 데이터 최신일은 2025-07-30.
+    display_name: 예약일
+    synonyms: [예약 날짜, 예약 생성일, booking date]
+    format:
+      type: date
+      date_format: year_month_day
+  - name: 예약 월
+    expr: "DATE_TRUNC('MONTH', source.created_at)"
+    comment: 예약이 생성된 월 (created_at 을 월 단위로 절삭).
+    display_name: 예약 월
+    synonyms: [예약월, 월별, booking month]
+    format:
+      type: date
+      date_format: locale_short_month
+  - name: 체크인 월
+    expr: "DATE_TRUNC('MONTH', source.check_in)"
+    comment: 숙박 체크인 날짜(check_in)의 월. 여행(숙박) 시점 기준 분석에 사용.
+    display_name: 체크인 월
+    synonyms: [체크인월, 숙박 월, 여행 월, check-in month]
+    format:
+      type: date
+      date_format: locale_short_month
+  - name: 예약 상태
+    expr: source.status
+    comment: "예약 상태. 값: pending(대기) / confirmed(확정) / cancelled(취소) / completed(숙박 완료)."
+    display_name: 예약 상태
+    synonyms: [상태, status, booking status]
+  - name: 고객 국가
+    expr: dim_user.country
+    comment: 예약한 고객의 국가. 대문자 전체 국가명 (예 UNITED STATES, SOUTH KOREA, JAPAN). 국가 코드(US, KR)가 아님.
+    display_name: 고객 국가
+    synonyms: [국가, 나라, country, 시장]
+  - name: 고객 유형
+    expr: dim_user.user_type
+    comment: "고객 유형. 값: individual(개인 고객) / business(비즈니스 고객)."
+    display_name: 고객 유형
+    synonyms: [고객 세그먼트, 세그먼트, user type, 개인/비즈니스]
+  - name: 숙박일수 구간
+    expr: |
+      CASE WHEN source.nights <= 2 THEN '1) 1-2박'
+           WHEN source.nights <= 4 THEN '2) 3-4박'
+           WHEN source.nights <= 7 THEN '3) 5-7박'
+           ELSE '4) 8박 이상' END
+    comment: 체크인~체크아웃 숙박일수(nights)를 1-2박 / 3-4박 / 5-7박 / 8박 이상으로 구간화.
+    display_name: 숙박일수 구간
+    synonyms: [숙박 기간, 박수 구간, length of stay]
+  - name: 투숙 인원
+    expr: source.guests_count
+    comment: 예약 1건의 투숙 인원 수(guests_count).
+    display_name: 투숙 인원
+    synonyms: [인원, 게스트 수, guests]
+measures:
+  - name: 예약 건수
+    expr: COUNT(source.booking_id)
+    comment: 예약 건수. 모든 예약 상태(pending, confirmed, cancelled, completed) 포함.
+    display_name: 예약 건수
+    synonyms: [예약 수, 예약량, bookings, booking count]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 0
+  - name: 총 예약 금액
+    expr: SUM(source.total_amount)
+    comment: 예약 금액(total_amount) 합계. 모든 예약 상태(pending, confirmed, cancelled, completed)를 포함한 총 거래액(GBV). 통화 USD.
+    display_name: 총 예약 금액
+    synonyms: [예약 금액, GBV, 총 거래액, gross booking value]
+    format:
+      type: currency
+      currency_code: USD
+      decimal_places:
+        type: exact
+        places: 0
+  - name: 평균 예약 금액
+    expr: AVG(source.total_amount)
+    comment: 예약 1건당 평균 금액(total_amount 평균). 모든 예약 상태 포함.
+    display_name: 평균 예약 금액
+    synonyms: [객단가, 평균 거래액, AOV, average booking value]
+    format:
+      type: currency
+      currency_code: USD
+      decimal_places:
+        type: exact
+        places: 2
+  - name: 취소율
+    expr: "COUNT(source.booking_id) FILTER (WHERE source.status = 'cancelled') / COUNT(source.booking_id)"
+    comment: 전체 예약 건수 중 status = cancelled 인 예약의 비율.
+    display_name: 취소율
+    synonyms: [취소 비율, cancellation rate, 캔슬율]
+    format:
+      type: percentage
+      decimal_places:
+        type: exact
+        places: 1
+  - name: 예약 고객 수
+    expr: COUNT(DISTINCT source.user_id)
+    comment: 예약을 1건 이상 한 고유 고객 수(distinct user_id).
+    display_name: 예약 고객 수
+    synonyms: [예약자 수, 고객 수, unique bookers]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 0
+  - name: 평균 숙박일수
+    expr: AVG(source.nights)
+    comment: 예약 1건당 평균 숙박일수(nights).
+    display_name: 평균 숙박일수
+    synonyms: [평균 박수, 평균 숙박 기간, average length of stay, ALOS]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 2

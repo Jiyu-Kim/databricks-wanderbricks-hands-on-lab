@@ -1,0 +1,7 @@
+.venv/
+site/
+.cache/
+__pycache__/
+.DS_Store
+docs/kor/assets/
+docs/eng/assets/

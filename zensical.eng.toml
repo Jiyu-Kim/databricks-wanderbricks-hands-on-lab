@@ -1,0 +1,64 @@
+[project]
+site_name = "Wanderbricks Hands-on Lab"
+site_url = "https://jiyu-kim.github.io/databricks-wanderbricks-hands-on-lab/eng/"
+repo_url = "https://github.com/Jiyu-Kim/databricks-wanderbricks-hands-on-lab"
+docs_dir = "docs/eng"
+extra_css = ["assets/stylesheets/extra.css"]
+site_dir = "site/eng"
+nav = [
+  { "Wanderbricks Hands-on Lab" = "index.md" },
+  { "Introduction" = ["00-introduction/index.md", { "Prerequisites" = "00-introduction/prerequisites.md" }, { "Wanderbricks Scenario & Personas" = "00-introduction/scenario.md" }] },
+  { "1) Build a Lakeflow Pipeline" = ["01-lakeflow-pipeline/index.md", { "1.1) Bronze: Ingest Source Data" = "01-lakeflow-pipeline/1-1-bronze.md" }, { "1.2) Silver & Gold: Cleanse and Customer 360" = "01-lakeflow-pipeline/1-2-silver-gold.md" }, { "1.3) Run the Pipeline and Check Results" = "01-lakeflow-pipeline/1-3-run.md" }] },
+  { "2) Build an AI/BI Dashboard" = ["02-aibi-dashboard/index.md", { "2.1) Create the Dataset and Tabs" = "02-aibi-dashboard/2-1-dataset.md" }, { "2.2) Build Core Widgets" = "02-aibi-dashboard/2-2-widgets.md" }, { "2.3) Build with Genie Code" = "02-aibi-dashboard/2-3-genie-code.md" }] },
+  { "3) Build Unity Catalog Semantics" = ["03-uc-semantics/index.md", { "3.1) Metric View: Bookings" = "03-uc-semantics/3-1-mv-bookings.md" }, { "3.2) Metric View: Reviews" = "03-uc-semantics/3-2-mv-reviews.md" }, { "3.3) Create and Link a Domain" = "03-uc-semantics/3-3-domain.md" }] },
+  { "4) Build and Improve a Genie Agent" = ["04-genie-agent/index.md", { "4.1) Create a Genie Agent" = "04-genie-agent/4-1-create.md" }, { "4.2) Monitoring: Collect Business Feedback" = "04-genie-agent/4-2-monitoring.md" }, { "4.3) Benchmark: Evaluate Accuracy" = "04-genie-agent/4-3-benchmark.md" }, { "4.4) Improve: Update Metric View and Create Pages" = "04-genie-agent/4-4-improve.md" }, { "4.5) (Optional) Analyze Documents with Volumes" = "04-genie-agent/4-5-volumes.md" }] },
+  { "5) Ask with Genie One" = ["05-genie-one/index.md"] },
+  { "Wrap-up" = "99-wrap-up/index.md" },
+]
+
+[project.theme]
+logo = "assets/images/databricks-logo.png"
+favicon = "assets/images/databricks-logo.png"
+language = "en"
+features = [
+  "content.code.copy",
+  "content.code.annotate",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.path",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "toc.follow",
+]
+
+[project.theme.palette]
+scheme = "default"
+primary = "red"
+accent = "deep orange"
+
+[project.extra]
+alternate = [
+  { name = "한국어", link = "/databricks-wanderbricks-hands-on-lab/kor/", lang = "ko" },
+  { name = "English", link = "/databricks-wanderbricks-hands-on-lab/eng/", lang = "en" },
+]
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+md_in_html = {}
+tables = {}
+toc.permalink = true
+pymdownx.details = {}
+pymdownx.superfences.custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+pymdownx.highlight.anchor_linenums = true
+pymdownx.inlinehilite = {}
+pymdownx.snippets.base_path = ["."]
+pymdownx.snippets.check_paths = true
+pymdownx.tabbed.alternate_style = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.keys = {}
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
