@@ -62,40 +62,40 @@
 
 | 파일명 | 캡처할 화면 | 빨간 박스로 표시할 곳 | 상태 |
 |---|---|---|---|
-| 2-1-01-new-dashboard.png | New > Dashboard | (본문 지시문 참고) | ⬜ |
-| 2-1-02-dashboard-name.png | 대시보드 이름 입력 | (본문 지시문 참고) | ⬜ |
-| 2-1-03-data-tab.png | Data 탭 | (본문 지시문 참고) | ⬜ |
-| 2-1-04-create-from-sql.png | Create from SQL | (본문 지시문 참고) | ⬜ |
-| 2-1-05-dataset-run.png | 데이터셋 쿼리 실행 결과 | (본문 지시문 참고) | ⬜ |
-| 2-1-06-dataset-rename.png | 데이터셋 이름 바꾸기 | (본문 지시문 참고) | ⬜ |
-| 2-1-07-canvas-tab.png | Canvas 탭 | (본문 지시문 참고) | ⬜ |
-| 2-1-08-rename-page-1.png | 첫 번째 탭 이름 바꾸기 | (본문 지시문 참고) | ⬜ |
-| 2-1-09-add-page-2.png | 두 번째 탭 추가 | (본문 지시문 참고) | ⬜ |
-| 2-2-01-page-1.png | ① 직접 만들기 탭 | (본문 지시문 참고) | ⬜ |
-| 2-2-02-add-visualization.png | Add a visualization | (본문 지시문 참고) | ⬜ |
-| 2-2-03-counter-type.png | Counter 선택 | (본문 지시문 참고) | ⬜ |
-| 2-2-04-counter-value.png | Counter Value 설정 | (본문 지시문 참고) | ⬜ |
-| 2-2-05-counter-title.png | Counter 제목 입력 | (본문 지시문 참고) | ⬜ |
-| 2-2-06-counter-result.png | 총 고객 수 위젯 | (본문 지시문 참고) | ⬜ |
-| 2-2-07-add-bar.png | 두 번째 위젯 배치 | (본문 지시문 참고) | ⬜ |
-| 2-2-08-bar-type.png | Bar 선택 | (본문 지시문 참고) | ⬜ |
-| 2-2-09-bar-axes.png | Bar 축 설정 | (본문 지시문 참고) | ⬜ |
-| 2-2-10-bar-title.png | Bar 제목 입력 | (본문 지시문 참고) | ⬜ |
-| 2-2-11-bar-result.png | 세그먼트별 생애 지출 위젯 | (본문 지시문 참고) | ⬜ |
-| 2-2-12-add-line.png | 세 번째 위젯 배치 | (본문 지시문 참고) | ⬜ |
-| 2-2-13-line-type.png | Line 선택 | (본문 지시문 참고) | ⬜ |
-| 2-2-14-line-axes.png | Line 축 설정 | (본문 지시문 참고) | ⬜ |
-| 2-2-15-line-title.png | Line 제목 입력 | (본문 지시문 참고) | ⬜ |
-| 2-2-16-line-result.png | 월별 최근 예약 고객 수 위젯 | (본문 지시문 참고) | ⬜ |
-| 2-2-17-layout.png | 완성된 ① 직접 만들기 탭 | (본문 지시문 참고) | ⬜ |
-| 2-3-01-page-2.png | ② Genie Code로 만들기 탭 | (본문 지시문 참고) | ⬜ |
-| 2-3-02-open-genie-code.png | Genie Code 패널 열기 | (본문 지시문 참고) | ⬜ |
-| 2-3-03-prompt.png | 프롬프트 입력 | (본문 지시문 참고) | ⬜ |
-| 2-3-04-generating.png | Genie Code가 위젯을 만드는 중 | (본문 지시문 참고) | ⬜ |
-| 2-3-05-result.png | Genie Code가 만든 위젯 | (본문 지시문 참고) | ⬜ |
-| 2-3-06-accept.png | Accept | (본문 지시문 참고) | ⬜ |
-| 2-3-07-publish.png | Publish | (본문 지시문 참고) | ⬜ |
-| 2-3-08-published.png | 게시된 대시보드 | (본문 지시문 참고) | ⬜ |
+| 2-1-01-new-dashboard.png | New > Dashboard | (본문 지시문 참고) | ✅ |
+| 2-1-02-dashboard-name.png | 대시보드 이름 입력 | (본문 지시문 참고) | ✅ |
+| 2-1-03-data-tab.png | Data 탭 | (본문 지시문 참고) | ✅ |
+| 2-1-04-create-from-sql.png | Create from SQL | (본문 지시문 참고) | ✅ |
+| 2-1-05-dataset-run.png | 데이터셋 쿼리 실행 결과 | (본문 지시문 참고) | ✅ |
+| 2-1-06-dataset-rename.png | 데이터셋 이름 바꾸기 | (본문 지시문 참고) | ✅ |
+| 2-1-07-canvas-tab.png | Canvas 탭 | (본문 지시문 참고) | ✅ |
+| 2-1-08-rename-page-1.png | 첫 번째 탭 이름 바꾸기 | (본문 지시문 참고) | ✅ |
+| 2-1-09-add-page-2.png | 두 번째 탭 추가 | (본문 지시문 참고) | ✅ |
+| 2-2-01-page-1.png | ① 직접 만들기 탭 | `① 직접 만들기` 탭 | ✅ |
+| 2-2-02-add-visualization.png | Add a visualization | **Add a visualization** | ✅ |
+| 2-2-03-counter-type.png | Counter 선택 | Visualization **Counter**, 데이터셋 | ✅ |
+| 2-2-04-counter-value.png | Counter Value 설정 | `COUNT(user_id)` | ✅ |
+| 2-2-05-counter-title.png | Counter 제목 입력 | **Title**, 제목 | ✅ |
+| 2-2-06-counter-result.png | 총 고객 수 위젯 | Counter 위젯 | ✅ |
+| 2-2-07-add-bar.png | 두 번째 위젯 배치 | **Add a visualization** | ✅ |
+| 2-2-08-bar-type.png | Bar 선택 | Visualization **Bar** | ✅ |
+| 2-2-09-bar-axes.png | Bar 축 설정 | X axis, Y axis | ✅ |
+| 2-2-10-bar-title.png | Bar 제목 입력 | **Title**, 제목 | ✅ |
+| 2-2-11-bar-result.png | 세그먼트별 생애 지출 위젯 | Bar 위젯 | ✅ |
+| 2-2-12-add-line.png | 세 번째 위젯 배치 | **Add a visualization**, 새 위젯 | ✅ |
+| 2-2-13-line-type.png | Line 선택 | Visualization, **Line** | ✅ |
+| 2-2-14-line-axes.png | Line 축 설정 | X axis, Y axis | ✅ |
+| 2-2-15-line-title.png | Line 제목 입력 | **Title**, 제목 | ✅ |
+| 2-2-16-line-result.png | 월별 최근 예약 고객 수 위젯 | Line 위젯 | ✅ |
+| 2-2-17-layout.png | 완성된 ① 직접 만들기 탭 | 위젯 3개 | ✅ |
+| 2-3-01-page-2.png | ② Genie Code로 만들기 탭 | `② Genie Code로 만들기` 탭 | ✅ |
+| 2-3-02-open-genie-code.png | Genie Code 패널 열기 | **Genie Code** 아이콘, 입력창 | ✅ |
+| 2-3-03-prompt.png | 프롬프트 입력 | 프롬프트, 전송 버튼 | ✅ |
+| 2-3-04-generating.png | Genie Code가 위젯을 만드는 중 | 진행 단계(Thinking) | ✅ |
+| 2-3-05-result.png | Genie Code가 만든 위젯 | 생성된 위젯 | ✅ |
+| 2-3-06-accept.png | 후속 요청으로 위젯 수정 | 후속 요청, 수정 결과, 수정된 위젯 | ✅ |
+| 2-3-07-publish.png | Publish | **Publish** | ✅ |
+| 2-3-08-published.png | 게시된 대시보드 | **Edit draft**, 게시된 페이지 탭 | ✅ |
 
 ## 03-uc-semantics
 
@@ -201,10 +201,10 @@
 
 | 파일명 | 캡처할 화면 | 빨간 박스로 표시할 곳 | 상태 |
 |---|---|---|---|
-| 99-01-delete-genie-agent.png | Genie Agent 삭제 | (본문 지시문 참고) | ⬜ |
-| 99-02-delete-dashboard.png | 대시보드 삭제 | (본문 지시문 참고) | ⬜ |
-| 99-03-delete-page.png | Page 삭제 | (본문 지시문 참고) | ⬜ |
-| 99-04-delete-domain.png | Domain 삭제 | (본문 지시문 참고) | ⬜ |
-| 99-05-delete-governed-tag.png | Governed Tag 삭제 | (본문 지시문 참고) | ⬜ |
-| 99-06-delete-pipeline.png | 파이프라인 삭제 | (본문 지시문 참고) | ⬜ |
-| 99-07-delete-catalog.png | 카탈로그 삭제 | (본문 지시문 참고) | ⬜ |
+| 99-01-delete-genie-agent.png | Genie Agent 삭제 | Data Room actions(⋮), Move to trash | ✅ |
+| 99-02-delete-dashboard.png | 대시보드 삭제 | More actions(⋮) → File actions → Move to trash | ✅ |
+| 99-03-delete-page.png | Page 삭제 | Page ⋮, Delete | ✅ |
+| 99-04-delete-domain.png | Domain 삭제 | Edit, Remove domain | ✅ |
+| 99-05-delete-governed-tag.png | Governed Tag 삭제 | Delete 버튼 | ✅ |
+| 99-06-delete-pipeline.png | 파이프라인 삭제 | 행 ⋮, Delete | ✅ |
+| 99-07-delete-catalog.png | 카탈로그 삭제 | 카탈로그 ⋮, Delete | ✅ |

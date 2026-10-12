@@ -37,11 +37,11 @@
 !!! warning "본인의 자산만 삭제하세요"
     공유 워크스페이스에서는 이름에 `<your_name>`이 붙은 **본인의 자산만** 삭제합니다.
 
-1. **Genie Agent:** **Genie Agents**에서 `<your_name> - Wanderbricks 마케팅 어시스턴트`의 케밥 메뉴(⋮) → **Delete**를 클릭합니다.
+1. **Genie Agent:** **Genie Agents**에서 `<your_name> - Wanderbricks 마케팅 어시스턴트`를 열고, 오른쪽 위의 케밥 메뉴(⋮) → **Move to trash**를 클릭합니다.
 
     ![Genie Agent 삭제](../assets/images/99-wrap-up/99-01-delete-genie-agent.png)
 
-2. **대시보드:** **Dashboards**에서 `<your_name> - Wanderbricks Customer 360`의 케밥 메뉴(⋮) → **Move to trash**를 클릭합니다.
+2. **대시보드:** **Dashboards**에서 `<your_name> - Wanderbricks Customer 360`을 열고, 오른쪽 위의 케밥 메뉴(⋮) → **File actions** → **Move to trash**를 클릭합니다.
 
     ![대시보드 삭제](../assets/images/99-wrap-up/99-02-delete-dashboard.png)
 
@@ -49,11 +49,11 @@
 
     ![Page 삭제](../assets/images/99-wrap-up/99-03-delete-page.png)
 
-4. **Domain:** **Discover**에서 `<your_name>_wanderbricks_marketing` Domain을 열고, 케밥 메뉴(⋮) → **Delete**를 클릭합니다.
+4. **Domain:** **Discover**에서 `<your_name>_wanderbricks_marketing` Domain을 열고, **Edit** → **Remove domain**을 클릭합니다.
 
     ![Domain 삭제](../assets/images/99-wrap-up/99-04-delete-domain.png)
 
-5. **Governed Tag:** **Catalog** → **Govern** → **Governed Tags**에서 `<your_name>_wanderbricks_marketing`의 케밥 메뉴(⋮) → **Delete**를 클릭합니다.
+5. **Governed Tag:** **Catalog** → **Govern** → **Governed Tags**에서 `<your_name>_wanderbricks_marketing`을 검색해 열고, 오른쪽 위의 **Delete**를 클릭합니다.
 
     ![Governed Tag 삭제](../assets/images/99-wrap-up/99-05-delete-governed-tag.png)
 
@@ -61,7 +61,7 @@
 
     ![파이프라인 삭제](../assets/images/99-wrap-up/99-06-delete-pipeline.png)
 
-7. **카탈로그:** **Catalog**에서 `<your_name>_wanderbricks_marketing`의 케밥 메뉴(⋮) → **Delete**를 클릭합니다. 카탈로그 안의 테이블, Metric View, Volume이 모두 함께 삭제됩니다.
+7. **카탈로그:** **Catalog**에서 `<your_name>_wanderbricks_marketing`을 열고, 카탈로그 이름 오른쪽의 케밥 메뉴(⋮) → **Delete**를 클릭합니다. 카탈로그 안의 테이블, Metric View, Volume이 모두 함께 삭제됩니다.
 
     ![카탈로그 삭제](../assets/images/99-wrap-up/99-07-delete-catalog.png)
 
