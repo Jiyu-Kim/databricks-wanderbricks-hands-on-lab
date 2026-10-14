@@ -29,7 +29,7 @@ Step 1에서 Daniel이 만든 `gold_customer_360` 테이블에는 고객 1명당
 | 페이지 | 내용 |
 |---|---|
 | [2.1) 데이터셋과 탭 만들기](2-1-dataset.md) | 대시보드를 만들고, 위젯이 사용할 데이터셋과 탭 2개를 만듭니다. |
-| [2.2) 핵심 위젯 직접 만들기](2-2-widgets.md) | 첫 번째 탭에 핵심 위젯 3개와 세그먼트 & 분포 위젯 4개(Heatmap, Histogram, 누적 막대, 버블)를 직접 만듭니다. |
+| [2.2) 핵심 위젯 직접 만들기](2-2-widgets.md) | 첫 번째 탭에 세그먼트 & 분포 위젯 4개(Heatmap, Histogram, 누적 막대, 버블)를 직접 만듭니다. |
 | [2.3) Genie Code로 한 번에 만들기](2-3-genie-code.md) | 두 번째 탭에서 Genie Code에게 프롬프트 한 번으로 대시보드를 만들게 합니다. |
 
 ## 이번 실습에서 사용하는 기능
@@ -43,7 +43,7 @@ Step 1에서 Daniel이 만든 `gold_customer_360` 테이블에는 고객 1명당
 ## 학습 목표 🎯
 
 - SQL로 대시보드 데이터셋을 정의할 수 있습니다.
-- Counter, Bar, Line, Heatmap, Histogram, Scatter 위젯을 직접 만들고 구성할 수 있습니다.
+- Heatmap, Histogram, Bar, Scatter 위젯을 직접 만들고 구성할 수 있습니다.
 - Genie Code로 자연어 프롬프트 한 번에 여러 위젯을 만들 수 있습니다.
 
 ## 예상 소요 시간 ⏱️
