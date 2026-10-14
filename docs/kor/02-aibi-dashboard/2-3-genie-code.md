@@ -19,13 +19,17 @@
     !!! info "Prompt:"
         ```text
         고객 360 데이터셋을 기반으로 고객 360 대시보드를 만들어줘. 대시보드에는 아래 항목을 반드시 포함해줘:
-        - 총 고객 수, 예약 전환율, 총 생애 지출 KPI
-        - 고객 세그먼트별 지출
-        - 월별 최근 예약 추이
-        - 국가별 고객 수
-        - 예약 빈도별 고객 비중
-        - VIP 고객 Top 50 테이블
+        - KPI 카운터 3개를 맨 위 한 줄에: 총 고객 수(user_id 개수), 예약 전환율(is_booker의 평균, 퍼센트 형식), 총 생애 지출(lifetime_spend 합계, USD 통화 형식)
+        - 고객 세그먼트별 생애 지출: customer_segment별 lifetime_spend 합계 막대 차트
+        - 월별 최근 예약 추이: last_booking_at을 월 단위로 묶은 고객 수 라인 차트
+        - 국가별 고객 수: country_group별 고객 수 막대 차트, 고객 수 내림차순 정렬
+        - 예약 빈도별 고객 비중: booking_freq별 고객 수 파이 차트
+        - VIP 고객 Top 50 테이블: lifetime_spend 상위 50명. 컬럼은 user_id, name, country, customer_segment, lifetime_bookings, lifetime_spend, avg_rating_given, last_booking_at
+        모든 위젯 제목은 한국어로 해줘.
         ```
+
+    !!! tip "프롬프트에 정의를 적는 이유"
+        "예약 전환율"이나 "VIP 고객"처럼 계산 방법이 여러 가지인 지표는 **어떤 컬럼으로 어떻게 계산할지**를 적어 주어야 결과가 매번 같습니다. 정의가 없으면 Genie Code가 실습자마다 다른 계산식(예: 전환율을 소수 0.44로 표시, VIP를 예약 수 기준으로 선정)을 고를 수 있습니다.
 
     ![프롬프트 입력](../assets/images/02-aibi-dashboard/2-3-03-prompt.png)
 
@@ -39,10 +43,10 @@
 
     | 항목 | 위젯 유형 (예시) |
     |---|---|
-    | 총 고객 수, 예약 전환율, 총 생애 지출 | Counter 3개 (약 124.39K / 43.93 / 4.13M) |
+    | 총 고객 수, 예약 전환율, 총 생애 지출 | Counter 3개 (약 124K / 43.9% / $4.1M) |
     | 세그먼트별 지출 | Bar |
     | 월별 최근 예약 추이 | Line |
-    | 국가별 고객 수 | Bar |
+    | 국가별 고객 수 | Bar (고객 수 내림차순, `기타` → INDIA → CHINA 순) |
     | 예약 빈도 비중 | Pie |
     | VIP Top 50 | Table |
 

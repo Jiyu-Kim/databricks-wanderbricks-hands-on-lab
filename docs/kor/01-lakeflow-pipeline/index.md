@@ -61,6 +61,7 @@ flowchart LR
 | [1.1) Bronze: 원천 데이터 수집](1-1-bronze.md) | 파이프라인을 만들고, 원천 테이블 3개를 그대로 수집하는 Bronze 테이블을 정의합니다. |
 | [1.2) Silver·Gold: 정제와 고객 360](1-2-silver-gold.md) | 데이터 품질 규칙(Expectations)으로 Silver 테이블을 정제하고, 고객 1명당 1행의 Gold 테이블을 만듭니다. |
 | [1.3) 파이프라인 실행과 결과 확인](1-3-run.md) | 파이프라인을 실행하고, 파이프라인 그래프와 데이터 품질 결과를 확인합니다. |
+| [1.4) (Optional) Genie Code와 Visual Data Prep](1-4-optional-genie-code-vdp.md) | 같은 파이프라인을 Genie Code 프롬프트로 만들어 보고, 코드 없이 데이터를 가공하는 Visual Data Prep을 살펴봅니다. |
 
 ## 이번 실습에서 사용하는 기능
 
