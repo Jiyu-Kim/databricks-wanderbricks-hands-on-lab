@@ -61,7 +61,7 @@ Genie One은 **Genie Ontology**를 바탕으로 답합니다. Genie Ontology는 
 
     ![매출·실매출 답변](../assets/images/05-genie-one/5-04-revenue-answer.png)
 
-3. 답변 맨 아래의 **Genie Ontology (2)**를 클릭해, 출처(citation)로 Step 4에서 만든 **매출**과 **실매출** Page가 표시되는지 확인합니다. 답변 본문의 정의 옆에 있는 Page 아이콘도 같은 출처를 가리킵니다.
+3. 답변 맨 아래의 **Genie Ontology** (2)를 클릭해, 출처(citation)로 Step 4에서 만든 **매출**과 **실매출** Page가 표시되는지 확인합니다. 답변 본문의 정의 옆에 있는 Page 아이콘도 같은 출처를 가리킵니다.
 
     ![Page citation](../assets/images/05-genie-one/5-05-page-citation.png)
 
@@ -84,7 +84,7 @@ Genie One은 **Genie Ontology**를 바탕으로 답합니다. Genie Ontology는 
         Wanderbricks에서 성수기는 언제를 말해? 그리고 2024년 성수기 예약 건수는?
         ```
 
-2. Genie One이 성수기를 체크인 기준 6·7·8·12월로 설명하고, 2024년 성수기 예약 건수를 **8,001건**으로 답하는지 확인합니다. 답변 아래의 **Genie Ontology (1)**를 클릭하면 **성수기** Page가 출처로 표시됩니다.
+2. Genie One이 성수기를 체크인 기준 6·7·8·12월로 설명하고, 2024년 성수기 예약 건수를 **8,001건**으로 답하는지 확인합니다. 답변 아래의 **Genie Ontology** (1)를 클릭하면 **성수기** Page가 출처로 표시됩니다.
 
     ![성수기 답변](../assets/images/05-genie-one/5-08-peak-season-answer.png)
 

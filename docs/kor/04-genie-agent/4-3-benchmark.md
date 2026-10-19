@@ -21,7 +21,7 @@
     2024년 성수기 예약 건수는?
     ```
 
-4. **Ground truth SQL answer (optional)**에 아래 SQL을 입력합니다. `<your_name>`을 본인 이름으로 바꿉니다. Wanderbricks에서 **성수기**는 체크인 월이 6·7·8월(여름)과 12월(연말)인 기간입니다.
+4. **Ground truth SQL answer (optional)** 입력란에 아래 SQL을 입력합니다. `<your_name>`을 본인 이름으로 바꿉니다. Wanderbricks에서 **성수기**는 체크인 월이 6·7·8월(여름)과 12월(연말)인 기간입니다.
 
     ```sql
     SELECT MEASURE(`예약 건수`) AS peak_season_bookings
@@ -40,7 +40,7 @@
 
     ![Run all benchmarks](../assets/images/04-genie-agent/4-3-04-run-benchmarks.png)
 
-2. 평가가 끝나면 평가 결과 화면이 열리고, 정확도가 **0% accurate (0/1)**로 표시되는지 확인합니다.
+2. 평가가 끝나면 평가 결과 화면이 열리고, 정확도가 **0% accurate** (0/1)로 표시되는지 확인합니다.
 
     ![Benchmark 결과 Bad](../assets/images/04-genie-agent/4-3-05-benchmark-bad.png)
 

@@ -23,7 +23,7 @@
 
     ![YAML 붙여넣기](../assets/images/03-uc-semantics/3-2-03-yaml-editor.png)
 
-4. **Create**를 클릭합니다. **Overview** 탭에서 **Measures (4)**와 **Fields (5)**가 등록된 것을 확인합니다.
+4. **Create**를 클릭합니다. **Overview** 탭에서 **Measures** (4)와 **Fields** (5)가 등록된 것을 확인합니다.
 
     ![mv_reviews Overview](../assets/images/03-uc-semantics/3-2-04-overview.png)
 

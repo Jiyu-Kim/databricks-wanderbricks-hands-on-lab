@@ -8,7 +8,7 @@
 | 환불 정책 개정 후 취소율이 예상 범위 안에 있어? | 시행일, 예상 영향, 재검토 기준 | 월별 취소율 |
 
 !!! warning "사전 조건"
-    이 페이지는 **Analyze Files in Volumes with Genie Agents** Preview가 활성화되어 있고, 워크스페이스에서 **Lakebase**를 사용할 수 있어야 합니다. [사전 준비](../00-introduction/prerequisites.md#22-analyze-files-in-volumes-with-genie-agents)에서 확인합니다.
+    이 페이지는 **Analyze Files in Volumes with Genie Agents** Preview가 활성화되어 있고, 워크스페이스에서 **Lakebase**를 사용할 수 있어야 합니다. [사전 준비](../00-introduction/prerequisites.md#21-analyze-files-in-volumes-with-genie-agents)에서 확인합니다.
 
 ## 1단계 - 실습 파일 내려받기
 
@@ -55,7 +55,7 @@
     ![Volume 색인 중](../assets/images/04-genie-agent/4-5-06b-indexing.png)
 
     !!! warning "색인이 끝난 뒤 질문하세요"
-        색인이 끝나기 전에 질문하면 Genie가 문서 내용을 찾지 못할 수 있습니다. **Sources** 목록의 상태가 **Indexing…**에서 **Indexed**로 바뀐 것을 확인한 뒤 4단계로 넘어갑니다.
+        색인이 끝나기 전에 질문하면 Genie가 문서 내용을 찾지 못할 수 있습니다. **Sources** 목록의 상태가 **Indexing…** 상태에서 **Indexed**로 바뀐 것을 확인한 뒤 4단계로 넘어갑니다.
 
     ![Volume 색인 완료](../assets/images/04-genie-agent/4-5-06c-indexed.png)
 

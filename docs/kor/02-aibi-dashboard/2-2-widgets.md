@@ -39,7 +39,7 @@
 
 ## 2단계 - RFM 히트맵 (Heatmap)
 
-**최근성(Recency)**과 **예약 빈도(Frequency)** 두 축으로 고객을 나누고, 셀의 색으로 **평균 생애 지출(Monetary)**을 표시합니다.
+**최근성**(Recency)과 **예약 빈도**(Frequency) 두 축으로 고객을 나누고, 셀의 색으로 **평균 생애 지출**(Monetary)을 표시합니다.
 
 1. 화면 하단의 도구 모음에서 **Add a visualization**(차트 아이콘)을 클릭한 뒤, 캔버스의 빈 곳을 클릭해 위젯을 배치합니다. 새 위젯 안에 **Ask Genie Code to edit this chart...** 입력창이 보이지만, 이번 탭에서는 사용하지 않고 오른쪽 설정 패널에서 직접 설정합니다.
 

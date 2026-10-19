@@ -17,7 +17,7 @@
 
     ![mv_bookings 열기](../assets/images/04-genie-agent/4-4-01-open-mv-bookings.png)
 
-2. 우측 상단의 **Edit**를 클릭합니다. 편집 화면이 YAML로 열리면 우측 상단의 **UI**를 클릭합니다. 편집 화면 왼쪽에 **Measures (6)**와 **Fields (8)** 목록이 표시됩니다.
+2. 우측 상단의 **Edit**를 클릭합니다. 편집 화면이 YAML로 열리면 우측 상단의 **UI**를 클릭합니다. 편집 화면 왼쪽에 **Measures** (6)와 **Fields** (8) 목록이 표시됩니다.
 
     ![Edit 화면](../assets/images/04-genie-agent/4-4-02-edit-mode.png)
 
@@ -109,7 +109,7 @@
 
 ### 1.7) 저장하고 확인하기
 
-1. 우측 상단의 **Save**를 클릭합니다. 목록이 **Measures (8)**, **Fields (10)**으로 바뀐 것을 확인합니다.
+1. 우측 상단의 **Save**를 클릭합니다. 목록이 **Measures** (8), **Fields** (10)으로 바뀐 것을 확인합니다.
 
     ![Save](../assets/images/04-genie-agent/4-4-12-save.png)
 
@@ -251,7 +251,7 @@
 
     ![Run all benchmarks](../assets/images/04-genie-agent/4-4-18-rerun-benchmarks.png)
 
-2. 정확도가 **100% accurate (1/1)**로, 질문의 **Assessment**가 **Good**으로 바뀐 것을 확인합니다. 결과를 클릭해 Genie가 `` `성수기 여부` = '성수기' ``와 `` `체크인 연도` = 2024 `` 조건으로 8,001건을 답한 것을 확인합니다.
+2. 정확도가 **100% accurate** (1/1)로, 질문의 **Assessment**가 **Good**으로 바뀐 것을 확인합니다. 결과를 클릭해 Genie가 `` `성수기 여부` = '성수기' ``와 `` `체크인 연도` = 2024 `` 조건으로 8,001건을 답한 것을 확인합니다.
 
     ![Benchmark 결과 Good](../assets/images/04-genie-agent/4-4-19-benchmark-good.png)
 

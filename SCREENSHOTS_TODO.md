@@ -19,10 +19,8 @@
 | prereq-06-governed-tags-permissions.png | Governed Tags → **Account Permissions** 탭 | 탭, 본인/그룹의 **CREATE** 권한 |✅ |
 | prereq-07-create-domain-button.png | Discover 화면 | **Create domain** 버튼 |✅ |
 | prereq-08-previews-menu.png | 우측 상단 사용자 메뉴를 연 상태 | **Previews** |✅ |
-| prereq-09-preview-discover-page.png | Previews 페이지에서 `Discover Page` 검색 | 검색창, 토글 |✅ |
 | prereq-10-preview-genie-volumes.png | Previews 페이지에서 `Analyze Files in Volumes with Genie Agents` 검색 | 검색창, 토글 |✅ |
 | prereq-11-preview-ontology-snippets.png | Previews 페이지에서 `Genie Ontology snippets` 검색 | 검색창, 토글 |✅ |
-| prereq-12-sidebar-discover.png | 왼쪽 사이드바 | **Discover** 메뉴 |✅ |
 | prereq-13-create-catalog-dialog.png | Create a new catalog 다이얼로그 (`jiyu_wanderbricks_marketing` 입력) | Catalog name, Type, **Create** 버튼 |✅ |
 | prereq-14-catalog-created.png | 카탈로그 생성 완료 다이얼로그 (Catalog created!) | **View catalog** 버튼 | ✅ |
 | prereq-15-catalog-default-schema.png | 생성한 카탈로그 화면 | `default` 스키마 |✅ |

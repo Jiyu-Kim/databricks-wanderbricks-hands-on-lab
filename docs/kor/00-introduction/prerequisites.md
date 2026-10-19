@@ -59,36 +59,21 @@ Step 3에서 Domain을 만들면 같은 이름의 Governed Tag가 함께 만들�
     ![Discover > Create domain 버튼](../assets/images/00-introduction/prereq-07-create-domain-button.png)
 
 !!! info
-    Domain을 만들려면 `MANAGE DISCOVERY` 권한이 필요합니다. 계정 관리자와 워크스페이스 관리자는 기본적으로 이 권한을 가지고 있습니다. 왼쪽 사이드바에 **Discover** 메뉴 자체가 보이지 않는다면, 다음 2단계의 **Discover Page** Preview가 활성화되어 있지 않은 것입니다.
+    Domain을 만들려면 `MANAGE DISCOVERY` 권한이 필요합니다. 계정 관리자와 워크스페이스 관리자는 기본적으로 이 권한을 가지고 있습니다.
 
 ## 2단계 - Preview 기능 확인하기
 
-이 실습은 Preview 단계의 기능을 일부 사용합니다. 아래 세 가지 기능이 활성화되어 있는지 차례로 확인합니다. 활성화되어 있지 않다면 워크스페이스 관리자에게 요청합니다.
+이 실습은 Preview 단계의 기능을 일부 사용합니다. 아래 두 가지 기능이 활성화되어 있는지 차례로 확인합니다. 활성화되어 있지 않다면 워크스페이스 관리자에게 요청합니다.
 
 | Preview 기능 | 사용하는 곳 | 확인 방법 |
 |---|---|---|
-| Discover Page | Step 3 ~ 5 (Domain, Page) | [2.1) Discover Page](#21-discover-page) |
-| Analyze Files in Volumes with Genie Agents | Step 4.5 (Volumes) | [2.2) Analyze Files in Volumes with Genie Agents](#22-analyze-files-in-volumes-with-genie-agents) |
-| Genie Ontology snippets | Step 5 (Genie One) | [2.3) Genie Ontology snippets](#23-genie-ontology-snippets) |
+| Analyze Files in Volumes with Genie Agents | Step 4.5 (Volumes) | [2.1) Analyze Files in Volumes with Genie Agents](#21-analyze-files-in-volumes-with-genie-agents) |
+| Genie Ontology snippets | Step 5 (Genie One) | [2.2) Genie Ontology snippets](#22-genie-ontology-snippets) |
 
 !!! info
-    **Previews** 페이지는 워크스페이스 관리자만 볼 수 있습니다. 관리자가 아니라면 워크스페이스 관리자에게 아래 세 가지 기능의 활성화 여부를 확인해 달라고 요청합니다. 일부 기능(예: **Discover Page**)은 계정 관리자가 Account Console의 **Previews** 페이지에서 먼저 활성화해야 할 수 있으며, 활성화한 뒤 반영되기까지 몇 분 정도 걸릴 수 있습니다.
+    **Previews** 페이지는 워크스페이스 관리자만 볼 수 있습니다. 관리자가 아니라면 워크스페이스 관리자에게 아래 두 가지 기능의 활성화 여부를 확인해 달라고 요청합니다. 활성화한 뒤 반영되기까지 몇 분 정도 걸릴 수 있습니다.
 
-### 2.1) Discover Page
-
-1. 우측 상단의 사용자 아이콘을 클릭한 뒤 **Previews**를 클릭합니다.
-
-    ![사용자 메뉴 > Previews](../assets/images/00-introduction/prereq-08-previews-menu.png)
-
-2. 검색창에 `Discover Page`를 입력하고, 토글이 **On**으로 되어 있는지 확인합니다. **Off**라면 클릭해 활성화합니다.
-
-    ![Previews > Discover Page](../assets/images/00-introduction/prereq-09-preview-discover-page.png)
-
-3. 활성화되면 왼쪽 사이드바에 **Discover** 메뉴가 나타납니다.
-
-    ![왼쪽 사이드바의 Discover 메뉴](../assets/images/00-introduction/prereq-12-sidebar-discover.png)
-
-### 2.2) Analyze Files in Volumes with Genie Agents
+### 2.1) Analyze Files in Volumes with Genie Agents
 
 1. 우측 상단의 사용자 아이콘을 클릭한 뒤 **Previews**를 클릭합니다.
 
@@ -101,7 +86,7 @@ Step 3에서 Domain을 만들면 같은 이름의 Governed Tag가 함께 만들�
     !!! warning "Lakebase가 필요합니다"
         Genie Agent가 Volume의 문서를 읽으려면 워크스페이스에서 **Lakebase**를 사용할 수 있어야 합니다. 왼쪽 사이드바의 **Compute**에 **Lakebase** 탭이 없다면 Preview를 켜도 4.5를 진행할 수 없습니다. 4.5는 Optional이므로 건너뛰어도 다른 Step에는 영향이 없습니다.
 
-### 2.3) Genie Ontology snippets
+### 2.2) Genie Ontology snippets
 
 1. 우측 상단의 사용자 아이콘을 클릭한 뒤 **Previews**를 클릭합니다.
 
@@ -146,7 +131,7 @@ Step 3에서 Domain을 만들면 같은 이름의 Governed Tag가 함께 만들�
 
     ![SQL Editor 메뉴](../assets/images/00-introduction/prereq-17-sql-editor-menu.png)
 
-3. 우측 상단의 compute 아이콘(●)을 클릭한 뒤 **More…**를 클릭합니다. **Attach to an existing compute resource** 창에서 사용할 SQL Warehouse(예: **Serverless Starter Warehouse**)를 선택하고 **Start and attach**를 클릭합니다.
+3. 우측 상단의 **Connect** 아이콘을 클릭한 뒤 **More…** 메뉴를 클릭합니다. **Attach to an existing compute resource** 창에서 사용할 SQL Warehouse(예: **Serverless Starter Warehouse**)를 선택하고 **Start and attach**를 클릭합니다.
 
     ![SQL Editor Warehouse 선택](../assets/images/00-introduction/prereq-18-sql-editor-warehouse.png)
 
