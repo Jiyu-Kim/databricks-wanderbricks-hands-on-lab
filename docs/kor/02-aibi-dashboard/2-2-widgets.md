@@ -18,7 +18,7 @@
 | `지출 고객` | 숙박 완료 예약이 있는 고객 1명 | 7,195 | LTV 분포 (Histogram) |
 | `국가별 고객 요약` | 국가 1개 (고객 500명 이상) | 47 | 국가별 규모 vs 고객 가치 (Scatter) |
 
-1. [2.1)의 2단계](2-1-dataset.md#2-)와 같은 방법으로 **Data** 탭 → **Create from SQL**을 클릭하고, 아래 쿼리를 붙여넣어 실행한 뒤 데이터셋 이름을 `지출 고객`으로 바꿉니다.
+1. [2.1)의 2단계](2-1-dataset.md#2-)와 같은 방법으로 **Data** 탭 → **Add SQL dataset**을 클릭하고, 아래 쿼리를 붙여넣어 실행한 뒤 데이터셋 이름을 `지출 고객`으로 바꿉니다.
 
     ```sql title="지출 고객 데이터셋"
     --8<-- "lab-files/kor/step2/spender_dataset.sql"
@@ -49,7 +49,7 @@
 
     ![Heatmap 선택](../assets/images/02-aibi-dashboard/2-2-19-heatmap-type.png)
 
-3. **X axis** 옆의 **+**를 클릭합니다. 데이터셋이 여러 개이므로 필드 목록이 데이터셋별로 묶여 있습니다. **고객 360**을 펼치고 `recency_bucket`을 선택합니다.
+3. **X axis** 옆의 **+** 버튼을 클릭합니다. 데이터셋이 여러 개이므로 필드 목록이 데이터셋별로 묶여 있습니다. **고객 360**을 펼치고 `recency_bucket`을 선택합니다.
 
     ![데이터셋 펼치고 필드 선택](../assets/images/02-aibi-dashboard/2-2-20-heatmap-dataset.png)
 
@@ -74,11 +74,11 @@
 
 1. **Add a visualization**을 클릭하고 히트맵 오른쪽 빈 곳에 위젯을 배치합니다. **Visualization**에서 **Histogram**을 선택합니다.
 
-2. **X axis** 옆의 **+**를 클릭하고, 이번에는 **지출 고객**을 펼쳐 `spender_ltv`를 선택합니다.
+2. **X axis** 옆의 **+** 버튼을 클릭하고, 이번에는 **지출 고객**을 펼쳐 `spender_ltv`를 선택합니다.
 
     ![지출 고객 데이터셋에서 필드 선택](../assets/images/02-aibi-dashboard/2-2-24-histogram-dataset.png)
 
-3. **Y axis**에 **COUNT(\*)**를 선택합니다.
+3. **Y axis**에 **COUNT(\*)** 집계를 선택합니다.
 
 4. X축의 `BIN(spender_ltv)`를 클릭하고 **Bin size**를 `100`으로 바꿉니다. 생애 지출이 $100 단위 구간으로 나뉩니다.
 
@@ -94,7 +94,7 @@
 
 1. **Add a visualization**을 클릭하고 히트맵 아래 빈 곳에 위젯을 배치합니다. **Visualization**은 기본값 **Bar**를 그대로 둡니다.
 
-2. **X axis**에 **고객 360**의 `country_group`을, **Y axis**에 **COUNT(\*)**를, **Color**에 `booking_freq`를 선택합니다. 같은 막대 안에서 예약 빈도별 고객 수가 쌓여 표시됩니다.
+2. **X axis**에 **고객 360**의 `country_group`을, **Y axis**에 **COUNT(\*)** 집계를, **Color**에 `booking_freq`를 선택합니다. 같은 막대 안에서 예약 빈도별 고객 수가 쌓여 표시됩니다.
 
     ![누적 막대 필드 설정](../assets/images/02-aibi-dashboard/2-2-27-stacked-fields.png)
 
@@ -112,7 +112,7 @@
 
     ![Scatter 선택](../assets/images/02-aibi-dashboard/2-2-30-bubble-type.png)
 
-2. **X axis** 옆의 **+**를 클릭하고 **국가별 고객 요약**을 펼쳐 `customers`를 선택합니다. **Y axis**에 `avg_ltv`를 선택합니다. 이 데이터셋은 국가 1개가 1행이라 점 하나가 국가 하나입니다.
+2. **X axis** 옆의 **+** 버튼을 클릭하고 **국가별 고객 요약**을 펼쳐 `customers`를 선택합니다. **Y axis**에 `avg_ltv`를 선택합니다. 이 데이터셋은 국가 1개가 1행이라 점 하나가 국가 하나입니다.
 
 3. **Size**에 `total_spend`를, **Color**에 `country`를 선택합니다. 점의 크기가 국가별 총 지출을 나타내는 버블 차트가 됩니다.
 

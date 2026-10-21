@@ -20,7 +20,7 @@
 
     ![Data 탭](../assets/images/02-aibi-dashboard/2-1-03-data-tab.png)
 
-2. **Create from SQL**을 클릭합니다.
+2. **Add SQL dataset**을 클릭합니다.
 
     ![Create from SQL](../assets/images/02-aibi-dashboard/2-1-04-create-from-sql.png)
 

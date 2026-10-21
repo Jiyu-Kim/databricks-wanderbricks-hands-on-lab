@@ -27,7 +27,7 @@
 
     ![YAML 붙여넣기](../assets/images/03-uc-semantics/3-1-04-yaml-editor.png)
 
-5. **Create**를 클릭합니다. Metric View가 만들어지면 **Overview** 탭에서 **Measures** (6)와 **Fields** (8)가 등록된 것을 확인합니다. Metric View의 dimension은 UI에서 **Fields**로 표시됩니다.
+5. **Save**를 클릭합니다. Metric View가 만들어지면 **Overview** 탭에서 **Measures** (6)와 **Fields** (8)가 등록된 것을 확인합니다. Metric View의 dimension은 UI에서 **Fields**로 표시됩니다.
 
     ![mv_bookings Overview](../assets/images/03-uc-semantics/3-1-05-overview.png)
 

@@ -155,7 +155,7 @@
 3. 아래 **Page ① 매출**의 내용을 입력합니다.
     - 맨 위의 **Click to set page name**을 클릭해 이름을 입력합니다.
     - **Domain**은 3.3)에서 만든 `<your_name>_wanderbricks_marketing`을 선택합니다.
-    - **Synonyms**는 **+**를 클릭해 하나씩 입력하고 Enter를 누릅니다.
+    - **Synonyms**는 **+** 버튼을 클릭해 하나씩 입력하고 Enter를 누릅니다.
     - 본문에는 **Definition**과 **Business use** 제목이 미리 들어 있습니다. 각 제목 아래에 내용을 입력합니다. 표는 툴바의 표 삽입 버튼으로 넣고, 남는 행과 열은 삭제합니다.
 
     ![Page 입력](../assets/images/04-genie-agent/4-4-16-page-form.png)
