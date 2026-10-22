@@ -1,18 +1,24 @@
 # 마무리
 
-## 주요 성과 🎯
+<div class="wb-meta" markdown>
+
+- :material-clock-outline: 약 10분
+
+</div>
+
+## 주요 성과
 
 여러분은 네 명의 페르소나가 되어, Wanderbricks의 원천 데이터부터 마케팅 임원이 직접 질문하는 AI까지 데이터 & AI 플랫폼을 엔드투엔드로 구축했습니다.
 
 | Step | 페르소나 | 만든 것 |
 |---|---|---|
-| 1 | 🛠️ Daniel · Data Engineer | Lakeflow 파이프라인, Bronze·Silver·Gold 테이블 7개 |
-| 2 | 📊 Ana · Data Analyst | 고객 360 AI/BI 대시보드 |
-| 3 | 📊 Ana · Data Analyst | Metric View 2개 (`mv_bookings`, `mv_reviews`), Domain |
-| 4 | 🤖 Aiden · AI Engineer | Genie Agent, Benchmark, Page 3개 (매출·실매출·성수기), Volume |
-| 5 | 📈 Mina · Marketing Executive | Genie One에서 비즈니스 질문하기 |
+| 1 | Daniel · Data Engineer | Lakeflow 파이프라인, Bronze·Silver·Gold 테이블 7개 |
+| 2 | Ana · Data Analyst | 고객 360 AI/BI 대시보드 |
+| 3 | Ana · Data Analyst | Metric View 2개 (`mv_bookings`, `mv_reviews`), Domain |
+| 4 | Aiden · AI Engineer | Genie Agent, Benchmark, Page 3개 (매출·실매출·성수기), Volume |
+| 5 | Mina · Marketing Executive | Genie One에서 비즈니스 질문하기 |
 
-## 학습 하이라이트 📚
+## 학습 하이라이트
 
 - **선언적 파이프라인:** SQL 몇 줄로 수집, 데이터 품질 검증, 증분 처리를 구현했습니다.
 - **한 번 정의한 KPI:** Metric View로 KPI를 한 번 정의하면 대시보드, SQL, Genie가 모두 같은 숫자를 사용합니다.
@@ -20,7 +26,7 @@
 - **측정 가능한 AI 품질:** Monitoring과 Benchmark로 AI가 틀리는 원인을 찾고, 개선 효과를 숫자로 확인했습니다.
 - **정형 + 비정형:** Volume으로 문서와 데이터를 함께 분석했습니다.
 
-## 다음 단계 🚀
+## 다음 단계
 
 | 주제 | 문서 |
 |---|---|
@@ -76,4 +82,4 @@
 
 이 실습에 대한 의견이나 개선할 점이 있다면 [GitHub Issues](https://github.com/Jiyu-Kim/databricks-wanderbricks-hands-on-lab/issues)에 남겨 주세요.
 
-수고하셨습니다! 🎉
+수고하셨습니다!

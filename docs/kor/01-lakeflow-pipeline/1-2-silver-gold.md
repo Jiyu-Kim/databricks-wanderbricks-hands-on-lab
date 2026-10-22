@@ -27,8 +27,8 @@ Silver 테이블에는 `CONSTRAINT ... EXPECT (...) ON VIOLATION DROP ROW` 구�
 | 테이블 | 주요 규칙 | 제거되는 행 |
 |---|---|---|
 | `silver_dim_users` | `email IS NOT NULL` | 124,509건 중 email이 없는 124건 |
-| `silver_fact_bookings` | `total_amount > 0`, `check_out >= check_in`, 유효한 status | 72,247건 중 금액이 0 이하인 1건 |
-| `silver_fact_reviews` | `is_deleted = false`, `rating BETWEEN 1 AND 5` | 99,793건 중 삭제(soft-delete)된 476건 (이 476건은 평점 값도 유효하지 않아 두 규칙을 동시에 위반합니다) |
+| `silver_fact_bookings` | `total_amount > 0`<br>`check_out >= check_in`<br>유효한 status | 72,247건 중 금액이 0 이하인 1건 |
+| `silver_fact_reviews` | `is_deleted = false`<br>`rating BETWEEN 1 AND 5` | 99,793건 중 삭제(soft-delete)된 476건 |
 
 !!! info "ON VIOLATION 옵션"
     `ON VIOLATION DROP ROW`를 생략하면 위반한 행도 저장하되 위반 건수만 기록합니다. `silver_dim_users`의 `valid_type` 규칙이 이 방식입니다. `ON VIOLATION FAIL UPDATE`를 사용하면 위반이 발생했을 때 파이프라인 실행을 중단합니다.

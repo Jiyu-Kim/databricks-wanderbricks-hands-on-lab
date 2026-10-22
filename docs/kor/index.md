@@ -26,7 +26,7 @@ hide:
 - :material-stairs: 5단계 실습
 - :material-account-group: 4명의 페르소나
 - :material-database-check: 샘플 데이터 기본 제공
-- :material-clock-outline: 약 4시간
+- :material-clock-outline: 약 3시간
 
 </div>
 
@@ -123,6 +123,8 @@ SQL 몇 줄로 스트리밍 수집, 데이터 품질 검증(Expectations), 증�
 ![Daniel](assets/images/personas/daniel.svg)
 <span>Daniel<small>Data Engineer</small></span>
 
+<p class="wb-step__time">약 30분</p>
+
 </div>
 
 </div>
@@ -151,6 +153,8 @@ SQL 몇 줄로 스트리밍 수집, 데이터 품질 검증(Expectations), 증�
 ![Ana](assets/images/personas/ana.svg)
 <span>Ana<small>Data Analyst</small></span>
 
+<p class="wb-step__time">약 35분</p>
+
 </div>
 
 </div>
@@ -178,6 +182,8 @@ Metric View로 KPI를 한 번 정의하고, Domain과 Page로 비즈니스 맥�
 
 ![Ana](assets/images/personas/ana.svg)
 <span>Ana<small>Data Analyst</small></span>
+
+<p class="wb-step__time">약 25분</p>
 
 </div>
 
@@ -208,6 +214,8 @@ Metric View로 KPI를 한 번 정의하고, Domain과 Page로 비즈니스 맥�
 ![Mina](assets/images/personas/mina.svg)
 <span>Aiden · Mina<small>AI Engineer · Marketing Executive</small></span>
 
+<p class="wb-step__time">약 50분</p>
+
 </div>
 
 </div>
@@ -235,6 +243,8 @@ Metric View로 KPI를 한 번 정의하고, Domain과 Page로 비즈니스 맥�
 
 ![Mina](assets/images/personas/mina.svg)
 <span>Mina<small>Marketing Executive</small></span>
+
+<p class="wb-step__time">약 15분</p>
 
 </div>
 
@@ -272,13 +282,13 @@ Metric View로 KPI를 한 번 정의하고, Domain과 Page로 비즈니스 맥�
   </div>
 </div>
 
-## 시작할 준비가 되셨나요? 🎯
+## 시작할 준비가 되셨나요?
 
 <div class="wb-ready" markdown>
 
 - [ ] Databricks 워크스페이스에 로그인할 수 있습니다.
 - [ ] 카탈로그를 만들 수 있는 권한이 있거나, 관리자에게 미리 요청해 두었습니다. 자세한 내용은 [사전 준비](00-introduction/prerequisites.md)에서 확인합니다.
-- [ ] 약 4시간 동안 실습에 집중할 수 있습니다.
+- [ ] 약 3시간 동안 실습에 집중할 수 있습니다.
 
 [소개로 이동해 실습 시작하기 :material-arrow-right:](00-introduction/index.md){ .md-button .md-button--primary }
 

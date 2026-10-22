@@ -1,6 +1,13 @@
 # 소개
 
-## 실습 개요 📋
+<div class="wb-meta" markdown>
+
+- :material-clock-outline: 약 15분
+- :material-file-document-multiple-outline: 페이지 2개
+
+</div>
+
+## 실습 개요
 
 본격적인 실습에 앞서, 이 섹션에서는 실습 환경을 준비하고 여러분이 함께할 가상의 회사 **Wanderbricks**와 네 명의 페르소나를 만납니다.
 
@@ -19,7 +26,3 @@
     Wanderbricks가 어떤 회사이고 어떤 문제를 겪고 있는지, 그리고 이 문제를 해결할 데이터 팀은 누구인지 알아봅니다.
 
 </div>
-
-## 예상 소요 시간 ⏱️
-
-약 15분

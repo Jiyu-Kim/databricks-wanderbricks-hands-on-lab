@@ -26,7 +26,7 @@ hide:
 - :material-stairs: 5 hands-on steps
 - :material-account-group: 4 personas
 - :material-database-check: Built-in sample data
-- :material-clock-outline: About 4 hours
+- :material-clock-outline: About 3 hours
 
 </div>
 
@@ -123,6 +123,8 @@ Implement streaming ingestion, data quality checks (Expectations), and increment
 ![Daniel](assets/images/personas/daniel.svg)
 <span>Daniel<small>Data Engineer</small></span>
 
+<p class="wb-step__time">About 30 min</p>
+
 </div>
 
 </div>
@@ -151,6 +153,8 @@ Configure the widgets yourself, or have Genie Code build the dashboard from a si
 ![Ana](assets/images/personas/ana.svg)
 <span>Ana<small>Data Analyst</small></span>
 
+<p class="wb-step__time">About 35 min</p>
+
 </div>
 
 </div>
@@ -178,6 +182,8 @@ Define KPIs once with Metric Views, and share business context across the organi
 
 ![Ana](assets/images/personas/ana.svg)
 <span>Ana<small>Data Analyst</small></span>
+
+<p class="wb-step__time">About 25 min</p>
 
 </div>
 
@@ -208,6 +214,8 @@ A natural-language analytics agent configured for specific data. Manage its accu
 ![Mina](assets/images/personas/mina.svg)
 <span>Aiden · Mina<small>AI Engineer · Marketing Executive</small></span>
 
+<p class="wb-step__time">About 50 min</p>
+
 </div>
 
 </div>
@@ -235,6 +243,8 @@ A conversational interface that answers questions using data and business defini
 
 ![Mina](assets/images/personas/mina.svg)
 <span>Mina<small>Marketing Executive</small></span>
+
+<p class="wb-step__time">About 15 min</p>
 
 </div>
 
@@ -272,13 +282,13 @@ A conversational interface that answers questions using data and business defini
   </div>
 </div>
 
-## Ready to start? 🎯
+## Ready to start?
 
 <div class="wb-ready" markdown>
 
 - [ ] You can sign in to a Databricks workspace.
 - [ ] You have permission to create a catalog, or you have already asked your admin for it. See [Prerequisites](00-introduction/prerequisites.md) for details.
-- [ ] You can focus on the lab for about 4 hours.
+- [ ] You can focus on the lab for about 3 hours.
 
 [Go to the introduction and start :material-arrow-right:](00-introduction/index.md){ .md-button .md-button--primary }
 

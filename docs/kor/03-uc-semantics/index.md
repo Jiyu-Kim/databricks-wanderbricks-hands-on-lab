@@ -1,6 +1,14 @@
 # 3) Unity Catalog Semantics 구축
 
-## 실습 개요 📋
+<div class="wb-meta" markdown>
+
+- :material-clock-outline: 약 25분
+- :material-account-outline: Ana
+- :material-file-document-multiple-outline: 페이지 3개
+
+</div>
+
+## 실습 개요
 
 Step 2에서 만든 대시보드의 "예약 전환율", "VIP 고객" 같은 지표는 대시보드 SQL 안에만 정의되어 있습니다. 다른 사람이 다른 도구에서 같은 지표를 계산하면 숫자가 달라질 수 있고, AI도 그 정의를 알 수 없습니다.
 
@@ -8,19 +16,15 @@ Step 2에서 만든 대시보드의 "예약 전환율", "VIP 고객" 같은 지�
 
 ## 이번 실습에서의 역할
 
-<div class="grid" markdown>
+<div class="wb-roles" markdown>
 
-<div class="card persona" markdown>
+<div class="wb-persona wb-persona--side" markdown>
 
-![Ana](../assets/images/personas/ana.svg){ width="96" }
+![Ana](../assets/images/personas/ana.svg)
 
-<div markdown>
-
-**📊 Ana - Data Analyst**
+<p class="wb-persona__name">Ana<span>Data Analyst</span></p>
 
 여러분은 계속해서 데이터 분석가 Ana입니다. 대시보드마다 흩어져 있던 KPI 계산 로직을 **Metric View**로 정의하고, 마케팅 분석 자산을 **Domain**으로 묶어 조직 전체가 찾아 쓸 수 있게 합니다. 이 결과물은 Step 4에서 AI 엔지니어 Aiden이 Genie Agent를 만드는 기반이 됩니다.
-
-</div>
 
 </div>
 
@@ -47,12 +51,8 @@ Unity Catalog Semantics는 비즈니스 지표, 용어, 조직 구조를 정의�
 !!! info "Page는 Step 4에서 만듭니다"
     Page는 이번 Step에서 개념만 소개하고, Step 4에서 Genie Agent가 모호한 비즈니스 용어 때문에 틀린 답을 낸 것을 확인한 뒤 그 해결책으로 직접 만듭니다.
 
-## 학습 목표 🎯
+## 학습 목표
 
 - YAML로 Metric View를 정의하고, `MEASURE()` 함수로 조회할 수 있습니다.
 - Metric View의 source로 Gold 대신 Silver 테이블을 사용하는 이유를 이해합니다.
 - Domain(과 Governed Tag)을 만들고, 데이터 자산을 Domain에 연결할 수 있습니다.
-
-## 예상 소요 시간 ⏱️
-
-약 30분

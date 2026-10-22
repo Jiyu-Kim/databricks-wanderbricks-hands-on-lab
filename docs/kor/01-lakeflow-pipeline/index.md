@@ -1,24 +1,28 @@
 # 1) Lakeflow 파이프라인 구축
 
-## 실습 개요 📋
+<div class="wb-meta" markdown>
+
+- :material-clock-outline: 약 30분 (Optional 1.4 제외)
+- :material-account-outline: Daniel
+- :material-file-document-multiple-outline: 페이지 4개
+
+</div>
+
+## 실습 개요
 
 Wanderbricks의 고객, 예약, 리뷰 데이터는 원본 그대로 쌓여 있어 분석할 때마다 정제 작업을 반복해야 했습니다. 이번 실습에서는 **Lakeflow Spark Declarative Pipelines**로 원천 데이터를 수집하고 정제해, 분석팀이 믿고 쓸 수 있는 테이블을 만듭니다.
 
 ## 이번 실습에서의 역할
 
-<div class="grid" markdown>
+<div class="wb-roles" markdown>
 
-<div class="card persona" markdown>
+<div class="wb-persona wb-persona--side" markdown>
 
-![Daniel](../assets/images/personas/daniel.svg){ width="96" }
+![Daniel](../assets/images/personas/daniel.svg)
 
-<div markdown>
-
-**🛠️ Daniel - Data Engineer**
+<p class="wb-persona__name">Daniel<span>Data Engineer</span></p>
 
 여러분은 Wanderbricks의 데이터 엔지니어 Daniel입니다. 원천 데이터를 Bronze → Silver → Gold 단계로 정제하는 파이프라인을 만들어, 다음 단계의 데이터 분석가 Ana에게 신뢰할 수 있는 테이블을 전달합니다.
-
-</div>
 
 </div>
 
@@ -72,12 +76,8 @@ Wanderbricks의 고객, 예약, 리뷰 데이터는 원본 그대로 쌓여 있�
 | **Materialized View** | 쿼리 결과를 미리 계산해 저장하는 뷰입니다. Gold 레이어의 집계에 사용합니다. |
 | **Expectations** | 데이터 품질 규칙입니다. 규칙을 위반한 행을 제거하거나 기록합니다. |
 
-## 학습 목표 🎯
+## 학습 목표
 
 - SQL만으로 Bronze → Silver → Gold 파이프라인을 선언적으로 정의할 수 있습니다.
 - Expectations로 데이터 품질 규칙을 적용하고, 그 결과를 확인할 수 있습니다.
 - 파이프라인 그래프로 테이블 간의 의존 관계를 확인할 수 있습니다.
-
-## 예상 소요 시간 ⏱️
-
-약 30분

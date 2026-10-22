@@ -1,6 +1,6 @@
 # Wanderbricks 시나리오 & 페르소나
 
-## 1 - Wanderbricks는 어떤 회사인가요?
+## Wanderbricks는 어떤 회사인가요?
 
 ![Wanderbricks: 전 세계 여행자와 숙소 호스트를 연결하는 휴가용 숙소 예약 마켓플레이스](../assets/images/00-introduction/wanderbricks-overview.svg)
 
@@ -11,7 +11,7 @@
 - **예약의 생애주기:** 하나의 예약은 **pending(대기)** → **confirmed(확정)** → **completed(숙박 완료)** 순으로 진행되며, 도중에 **cancelled**(취소)될 수 있습니다.
 - **뚜렷한 계절성:** 여름(6~8월)과 연말(12월)에 예약이 집중됩니다.
 
-## 2 - Wanderbricks가 마주한 문제
+## Wanderbricks가 마주한 문제
 
 최근 Wanderbricks의 경영진 회의에서는 같은 질문에 대해 매번 다른 숫자가 나왔습니다.
 
@@ -30,17 +30,17 @@
 |---|---|---|---|
 | 데이터는 흩어져 있고, 지표 정의는 사람마다 다름 | 신뢰할 수 있는 단일 데이터 기반과 공통의 비즈니스 정의 마련 | Databricks 위에 파이프라인 → 대시보드 → 시맨틱 레이어 → AI 에이전트를 구축 | 현업이 자연어로 질문하고, 조직 전체가 같은 숫자를 보게 됨 |
 
-## 3 - Wanderbricks 데이터 팀을 소개합니다
+## Wanderbricks 데이터 팀을 소개합니다
 
 이 실습에서 여러분은 아래 네 명의 페르소나가 되어 Wanderbricks의 문제를 해결합니다.
 
-<div class="grid" markdown>
+<div class="wb-personas wb-personas--detail" markdown>
 
-<div class="card" markdown>
+<div class="wb-persona wb-persona--head" markdown>
 
-![Daniel](../assets/images/personas/daniel.svg){ width="120" align=right }
+![Daniel](../assets/images/personas/daniel.svg)
 
-### 🛠️ Daniel - Data Engineer
+### Daniel <span class="wb-sep">·</span> <span>Data Engineer</span>
 
 *"원천 데이터는 매일 쌓이는데, 분석팀이 믿고 쓸 수 있는 테이블은 아직 없어요."*
 
@@ -54,11 +54,11 @@
 
 </div>
 
-<div class="card" markdown>
+<div class="wb-persona wb-persona--head" markdown>
 
-![Ana](../assets/images/personas/ana.svg){ width="120" align=right }
+![Ana](../assets/images/personas/ana.svg)
 
-### 📊 Ana - Data Analyst
+### Ana <span class="wb-sep">·</span> <span>Data Analyst</span>
 
 *"같은 KPI를 대시보드마다 다시 계산하다 보니, 숫자가 서로 맞지 않아요."*
 
@@ -72,11 +72,11 @@
 
 </div>
 
-<div class="card" markdown>
+<div class="wb-persona wb-persona--head" markdown>
 
-![Aiden](../assets/images/personas/aiden.svg){ width="120" align=right }
+![Aiden](../assets/images/personas/aiden.svg)
 
-### 🤖 Aiden - AI Engineer
+### Aiden <span class="wb-sep">·</span> <span>AI Engineer</span>
 
 *"현업이 직접 질문할 수 있는 AI를 만들고 싶지만, 틀린 답을 내놓을까 봐 걱정이에요."*
 
@@ -90,11 +90,11 @@
 
 </div>
 
-<div class="card" markdown>
+<div class="wb-persona wb-persona--head" markdown>
 
-![Mina](../assets/images/personas/mina.svg){ width="120" align=right }
+![Mina](../assets/images/personas/mina.svg)
 
-### 📈 Mina - Marketing Executive
+### Mina <span class="wb-sep">·</span> <span>Marketing Executive</span>
 
 *"캠페인 성과를 바로 확인하고 싶은데, 매번 데이터 팀에 요청하고 기다려야 해요."*
 
@@ -110,7 +110,7 @@
 
 </div>
 
-## 4 - 실습 여정
+## 실습 여정
 
 네 명의 페르소나는 아래 순서로 각자의 결과물을 만들고, 앞 단계의 결과물을 이어받아 다음 단계를 진행합니다.
 

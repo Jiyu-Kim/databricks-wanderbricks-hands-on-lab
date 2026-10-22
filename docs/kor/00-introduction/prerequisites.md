@@ -49,7 +49,7 @@ Step 3에서 Domain을 만들면 같은 이름의 Governed Tag가 함께 만들�
 
     ![Governed Tags > Account Permissions](../assets/images/00-introduction/prereq-06-governed-tags-permissions.png)
 
-!!! info
+!!! info "워크스페이스 관리자는 기본 권한이 있습니다"
     워크스페이스 관리자는 기본적으로 Governed Tag 생성 권한을 가지고 있습니다.
 
 ### 1.4) Domain 생성 권한
@@ -58,7 +58,7 @@ Step 3에서 Domain을 만들면 같은 이름의 Governed Tag가 함께 만들�
 
     ![Discover > Create domain 버튼](../assets/images/00-introduction/prereq-07-create-domain-button.png)
 
-!!! info
+!!! info "Domain 생성에 필요한 권한"
     Domain을 만들려면 `MANAGE DISCOVERY` 권한이 필요합니다. 계정 관리자와 워크스페이스 관리자는 기본적으로 이 권한을 가지고 있습니다.
 
 ## 2단계 - Preview 기능 확인하기
@@ -70,7 +70,7 @@ Step 3에서 Domain을 만들면 같은 이름의 Governed Tag가 함께 만들�
 | Analyze Files in Volumes with Genie Agents | Step 4.5 (Volumes) | [2.1) Analyze Files in Volumes with Genie Agents](#21-analyze-files-in-volumes-with-genie-agents) |
 | Genie Ontology snippets | Step 5 (Genie One) | [2.2) Genie Ontology snippets](#22-genie-ontology-snippets) |
 
-!!! info
+!!! info "Previews는 관리자만 볼 수 있습니다"
     **Previews** 페이지는 워크스페이스 관리자만 볼 수 있습니다. 관리자가 아니라면 워크스페이스 관리자에게 아래 두 가지 기능의 활성화 여부를 확인해 달라고 요청합니다. 활성화한 뒤 반영되기까지 몇 분 정도 걸릴 수 있습니다.
 
 ### 2.1) Analyze Files in Volumes with Genie Agents

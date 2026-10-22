@@ -4,11 +4,15 @@
 
 ## 1단계 - Mina로서 질문하기
 
-![Mina](../assets/images/personas/mina.svg){ width="72" align=left }
+<div class="wb-persona wb-persona--side wb-persona--switch" markdown>
 
-**📈 Mina:** *"다음 분기 국가별 마케팅 예산을 정하려면, 작년에 어느 나라에서 매출이 많이 나왔는지부터 봐야겠어요."*
+![Mina](../assets/images/personas/mina.svg)
 
-<br clear="left">
+<p class="wb-persona__name">Mina<span>Marketing Executive</span></p>
+
+*"다음 분기 국가별 마케팅 예산을 정하려면, 작년에 어느 나라에서 매출이 많이 나왔는지부터 봐야겠어요."*
+
+</div>
 
 1. Genie Agent 화면 우측 상단의 **New chat** 아이콘(연필이 있는 사각형)을 클릭해 새 대화를 시작합니다.
 
@@ -50,11 +54,15 @@
 
 ## 3단계 - Aiden으로서 Monitor 탭에서 피드백 확인하기
 
-![Aiden](../assets/images/personas/aiden.svg){ width="72" align=left }
+<div class="wb-persona wb-persona--side wb-persona--switch" markdown>
 
-**🤖 Aiden:** *"현업이 어떤 질문을 하고, 어떤 답에 불만족했는지 확인해 볼게요."*
+![Aiden](../assets/images/personas/aiden.svg)
 
-<br clear="left">
+<p class="wb-persona__name">Aiden<span>AI Engineer</span></p>
+
+*"현업이 어떤 질문을 하고, 어떤 답에 불만족했는지 확인해 볼게요."*
+
+</div>
 
 1. Genie Agent 화면 상단의 **Monitor**를 클릭합니다.
 

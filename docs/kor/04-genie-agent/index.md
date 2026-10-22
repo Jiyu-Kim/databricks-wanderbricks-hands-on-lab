@@ -1,6 +1,14 @@
 # 4) Genie Agent 구축과 고도화
 
-## 실습 개요 📋
+<div class="wb-meta" markdown>
+
+- :material-clock-outline: 약 50분 (Optional 4.5 제외)
+- :material-account-outline: Aiden · Mina
+- :material-file-document-multiple-outline: 페이지 5개
+
+</div>
+
+## 실습 개요
 
 마케팅 임원 Mina는 캠페인 성과를 확인할 때마다 데이터 팀에 요청하고 기다려야 했습니다. 이번 실습에서는 Step 3에서 만든 Metric View로 Mina가 자연어로 직접 질문할 수 있는 **Genie Agent**를 만듭니다.
 
@@ -8,33 +16,25 @@ AI가 틀린 답을 낼 수 있다는 걱정은 그대로 남아 있습니다. �
 
 ## 이번 실습에서의 역할
 
-<div class="grid" markdown>
+<div class="wb-roles" markdown>
 
-<div class="card persona" markdown>
+<div class="wb-persona wb-persona--side" markdown>
 
-![Aiden](../assets/images/personas/aiden.svg){ width="96" }
+![Aiden](../assets/images/personas/aiden.svg)
 
-<div markdown>
-
-**🤖 Aiden - AI Engineer**
+<p class="wb-persona__name">Aiden<span>AI Engineer</span></p>
 
 여러분은 Wanderbricks의 AI 엔지니어 Aiden입니다. Genie Agent를 만들고, 피드백과 평가 결과를 바탕으로 답변의 정확도를 높입니다.
 
 </div>
 
-</div>
+<div class="wb-persona wb-persona--side" markdown>
 
-<div class="card persona" markdown>
+![Mina](../assets/images/personas/mina.svg)
 
-![Mina](../assets/images/personas/mina.svg){ width="96" }
-
-<div markdown>
-
-**📈 Mina - Marketing Executive**
+<p class="wb-persona__name">Mina<span>Marketing Executive</span></p>
 
 4.2에서는 잠시 마케팅 임원 Mina가 되어, 실제 업무 질문을 던지고 답변이 틀렸을 때 피드백을 남깁니다.
-
-</div>
 
 </div>
 
@@ -76,12 +76,8 @@ AI가 틀린 답을 낼 수 있다는 걱정은 그대로 남아 있습니다. �
 | **Page** | 비즈니스 용어의 공식 정의입니다. Genie One이 답변할 때 참조합니다. |
 | **Volumes** | PDF 같은 비정형 파일을 Genie Agent의 데이터 소스로 연결합니다. |
 
-## 학습 목표 🎯
+## 학습 목표
 
 - Metric View를 데이터 소스로 Genie Agent를 만들 수 있습니다.
 - Monitoring과 Benchmark로 Genie Agent가 틀린 답을 내는 원인을 찾을 수 있습니다.
 - Metric View와 Page를 개선해 답변의 정확도를 높이고, 그 결과를 평가로 확인할 수 있습니다.
-
-## 예상 소요 시간 ⏱️
-
-약 50분 (Optional인 4.5 제외)

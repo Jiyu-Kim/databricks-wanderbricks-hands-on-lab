@@ -1,26 +1,29 @@
 # 5) Genie One으로 질문하기
 
-## 실습 개요 📋
+<div class="wb-meta" markdown>
+
+- :material-clock-outline: 약 15분
+- :material-account-outline: Mina
+
+</div>
+
+## 실습 개요
 
 Step 4에서 만든 Page는 Genie Agent가 아니라 **Genie One**이 참조합니다. 이번 실습에서는 Genie One에서 비즈니스 용어가 들어간 질문을 던지고, Genie One이 여러분이 만든 Page를 근거로 답하는지 확인합니다.
 
 ## 이번 실습에서의 역할
 
-<div class="grid" markdown>
+<div class="wb-roles" markdown>
 
-<div class="card persona" markdown>
+<div class="wb-persona wb-persona--side" markdown>
 
-![Mina](../assets/images/personas/mina.svg){ width="96" }
+![Mina](../assets/images/personas/mina.svg)
 
-<div markdown>
-
-**📈 Mina - Marketing Executive**
+<p class="wb-persona__name">Mina<span>Marketing Executive</span></p>
 
 *"이제 데이터 팀에 요청하지 않고, 궁금한 걸 바로 물어보고 싶어요."*
 
 여러분은 마케팅 임원 Mina입니다. 특정 Genie Agent를 찾아 들어가지 않고, Genie One에서 바로 질문합니다.
-
-</div>
 
 </div>
 
