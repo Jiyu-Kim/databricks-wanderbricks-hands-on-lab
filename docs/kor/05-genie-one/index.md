@@ -50,7 +50,7 @@ Genie One은 **Genie Ontology**를 바탕으로 답합니다. Genie Ontology는 
 
 1. 아래 질문을 입력하고 전송합니다.
 
-    !!! info "Prompt:"
+    !!! prompt "프롬프트"
         ```text
         Wanderbricks에서 매출과 실매출은 어떻게 달라? 2024년 기준으로 각각 얼마야?
         ```
@@ -79,7 +79,7 @@ Genie One은 **Genie Ontology**를 바탕으로 답합니다. Genie Ontology는 
 
 1. 왼쪽 위의 **New chat**을 클릭해 새 대화를 시작하고, 아래 질문을 입력합니다.
 
-    !!! info "Prompt:"
+    !!! prompt "프롬프트"
         ```text
         Wanderbricks에서 성수기는 언제를 말해? 그리고 2024년 성수기 예약 건수는?
         ```

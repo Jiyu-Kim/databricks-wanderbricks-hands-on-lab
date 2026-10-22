@@ -4,6 +4,7 @@ site_url = "https://jiyu-kim.github.io/databricks-wanderbricks-hands-on-lab/kor/
 repo_url = "https://github.com/Jiyu-Kim/databricks-wanderbricks-hands-on-lab"
 docs_dir = "docs/kor"
 extra_css = ["assets/stylesheets/extra.css"]
+extra_javascript = ["assets/javascripts/zoom.js"]
 site_dir = "site/kor"
 nav = [
   { "Wanderbricks Hands-on Lab" = "index.md" },

@@ -114,17 +114,66 @@
 
 네 명의 페르소나는 아래 순서로 각자의 결과물을 만들고, 앞 단계의 결과물을 이어받아 다음 단계를 진행합니다.
 
-```mermaid
-flowchart LR
-    S1["Step 1 · Daniel<br/>Lakeflow 파이프라인<br/>(Bronze → Silver → Gold)"] --> S2["Step 2 · Ana<br/>AI/BI 대시보드"]
-    S1 --> S3["Step 3 · Ana<br/>Domain · Metric View"]
-    S3 --> S4["Step 4 · Aiden & Mina<br/>Genie Agent 구축 · 고도화"]
-    S4 --> S5["Step 5 · Mina<br/>Genie One"]
-    classDef de fill:#E3F2FD,stroke:#1E88E5;
-    classDef da fill:#FCE4EC,stroke:#D81B60;
-    classDef ai fill:#EDE7F6,stroke:#5E35B1;
-    classDef mk fill:#FFF3E0,stroke:#FB8C00;
-    class S1 de; class S2,S3 da; class S4 ai; class S5 mk;
-```
+<div class="wb-flow" markdown>
+
+<div class="wb-flow__track" markdown>
+
+<div class="wb-flow__item" markdown>
+
+![Daniel](../assets/images/personas/daniel.svg)
+<small>Step 1 · Daniel</small>
+<strong>Lakeflow 파이프라인</strong>
+<span>Bronze → Silver → Gold</span>
+
+</div>
+
+<div class="wb-flow__arrow" aria-hidden="true"></div>
+
+<div class="wb-flow__item" markdown>
+
+![Ana](../assets/images/personas/ana.svg)
+<small>Step 2 · Ana</small>
+<strong>AI/BI 대시보드</strong>
+<span>고객 360</span>
+
+</div>
+
+<div class="wb-flow__arrow" aria-hidden="true"></div>
+
+<div class="wb-flow__item" markdown>
+
+![Ana](../assets/images/personas/ana.svg)
+<small>Step 3 · Ana</small>
+<strong>Domain · Metric View</strong>
+<span>비즈니스 지표 정의</span>
+
+</div>
+
+<div class="wb-flow__arrow" aria-hidden="true"></div>
+
+<div class="wb-flow__item" markdown>
+
+![Aiden](../assets/images/personas/aiden.svg)
+![Mina](../assets/images/personas/mina.svg)
+<small>Step 4 · Aiden & Mina</small>
+<strong>Genie Agent</strong>
+<span>구축 · 고도화</span>
+
+</div>
+
+<div class="wb-flow__arrow" aria-hidden="true"></div>
+
+<div class="wb-flow__item" markdown>
+
+![Mina](../assets/images/personas/mina.svg)
+<small>Step 5 · Mina</small>
+<strong>Genie One</strong>
+<span>자연어로 질문</span>
+
+</div>
+
+</div>
+
+</div>
 
 준비가 끝났다면 [Step 1) Lakeflow 파이프라인 구축](../01-lakeflow-pipeline/index.md)으로 이동해 Daniel의 업무를 시작합니다.

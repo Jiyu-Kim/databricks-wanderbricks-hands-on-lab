@@ -42,14 +42,21 @@ AI가 틀린 답을 낼 수 있다는 걱정은 그대로 남아 있습니다. �
 
 ## 실습 구조
 
-```mermaid
-flowchart LR
-    A["4.1 만들기<br/>(Aiden)"] --> B["4.2 Monitoring<br/>(Mina가 피드백)"]
-    B --> C["4.3 Benchmark<br/>(Aiden이 평가)"]
-    C --> D["4.4 개선<br/>Metric View 수정 · Page 생성"]
-    D --> E["재평가<br/>정답 확인"]
-    E --> F["4.5 (Optional)<br/>Volumes로 문서 분석"]
-```
+<div class="wb-flow">
+<div class="wb-flow__track">
+<div class="wb-flow__item"><small>4.1</small><strong>만들기</strong><span>Aiden</span></div>
+<div class="wb-flow__arrow" aria-hidden="true"></div>
+<div class="wb-flow__item"><small>4.2</small><strong>Monitoring</strong><span>Mina가 피드백</span></div>
+<div class="wb-flow__arrow" aria-hidden="true"></div>
+<div class="wb-flow__item"><small>4.3</small><strong>Benchmark</strong><span>Aiden이 평가</span></div>
+<div class="wb-flow__arrow" aria-hidden="true"></div>
+<div class="wb-flow__item"><small>4.4</small><strong>개선</strong><span>Metric View 수정 · Page 생성</span></div>
+<div class="wb-flow__arrow" aria-hidden="true"></div>
+<div class="wb-flow__item"><small>4.4</small><strong>재평가</strong><span>정답 확인</span></div>
+<div class="wb-flow__arrow" aria-hidden="true"></div>
+<div class="wb-flow__item wb-flow__item--optional"><small>4.5 (Optional)</small><strong>Volumes</strong><span>문서 분석</span></div>
+</div>
+</div>
 
 | 페이지 | 내용 |
 |---|---|

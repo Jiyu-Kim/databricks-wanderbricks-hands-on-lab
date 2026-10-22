@@ -23,7 +23,7 @@
 
 1. Genie Code 입력창에 아래 프롬프트를 붙여넣고 전송합니다.
 
-    !!! info "Prompt:"
+    !!! prompt "프롬프트"
         ```text
         samples.wanderbricks의 users, bookings, reviews 테이블로 SQL 메달리온 파이프라인을 만들어줘. 파일은 bronze.sql, silver.sql, gold.sql 3개로 나눠줘.
         - Bronze: bronze_users, bronze_bookings, bronze_reviews 스트리밍 테이블. 원천을 STREAM()으로 그대로 읽고 _ingested_at(current_timestamp), _source(원천 테이블명) 컬럼 추가
@@ -93,7 +93,7 @@
 
 1. 캔버스 가운데 입력창에 아래 내용을 입력하고 전송합니다. 카탈로그·스키마 이름은 본인 것으로 바꿉니다.
 
-    !!! info "Prompt:"
+    !!! prompt "프롬프트"
         ```text
         <your_name>_wanderbricks_marketing.genie_code의 silver_fact_bookings를 user_id별로 집계해서 예약 수(booking_id 개수)와 completed 예약의 total_amount 합계(lifetime_spend)를 구하고, silver_dim_users에 user_id로 LEFT JOIN해서 country, user_type과 함께 보여줘.
         ```

@@ -28,33 +28,33 @@ Wanderbricks의 고객, 예약, 리뷰 데이터는 원본 그대로 쌓여 있�
 
 이 파이프라인은 메달리온 아키텍처에 따라 3개 레이어, 총 7개의 데이터셋을 만듭니다.
 
-```mermaid
-flowchart LR
-    subgraph SRC [samples.wanderbricks]
-        U[(users)]
-        B[(bookings)]
-        R[(reviews)]
-    end
-    subgraph BR [Bronze · 원본 보존]
-        BU[bronze_users]
-        BB[bronze_bookings]
-        BRV[bronze_reviews]
-    end
-    subgraph SV [Silver · 정제와 품질 검증]
-        SU[silver_dim_users]
-        SB[silver_fact_bookings]
-        SR[silver_fact_reviews]
-    end
-    subgraph GD [Gold · 비즈니스 집계]
-        G[gold_customer_360]
-    end
-    U --> BU --> SU
-    B --> BB --> SB
-    R --> BRV --> SR
-    SU --> G
-    SB --> G
-    SR --> G
-```
+<div class="wb-arch">
+  <div class="wb-arch__col">
+    <p class="wb-arch__label">samples.wanderbricks</p>
+    <div class="wb-arch__node"><strong>users</strong></div>
+    <div class="wb-arch__node"><strong>bookings</strong></div>
+    <div class="wb-arch__node"><strong>reviews</strong></div>
+  </div>
+  <div class="wb-arch__flow" aria-hidden="true"></div>
+  <div class="wb-arch__col">
+    <p class="wb-arch__label">Bronze · 원본 보존</p>
+    <div class="wb-arch__node"><strong>bronze_<wbr>users</strong></div>
+    <div class="wb-arch__node"><strong>bronze_<wbr>bookings</strong></div>
+    <div class="wb-arch__node"><strong>bronze_<wbr>reviews</strong></div>
+  </div>
+  <div class="wb-arch__flow" aria-hidden="true"></div>
+  <div class="wb-arch__col">
+    <p class="wb-arch__label">Silver · 정제와 품질 검증</p>
+    <div class="wb-arch__node"><strong>silver_<wbr>dim_<wbr>users</strong></div>
+    <div class="wb-arch__node"><strong>silver_<wbr>fact_<wbr>bookings</strong></div>
+    <div class="wb-arch__node"><strong>silver_<wbr>fact_<wbr>reviews</strong></div>
+  </div>
+  <div class="wb-arch__flow" aria-hidden="true"></div>
+  <div class="wb-arch__col wb-arch__col--center">
+    <p class="wb-arch__label">Gold · 비즈니스 집계</p>
+    <div class="wb-arch__node"><strong>gold_<wbr>customer_<wbr>360</strong></div>
+  </div>
+</div>
 
 | 페이지 | 내용 |
 |---|---|

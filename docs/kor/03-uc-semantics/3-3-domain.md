@@ -2,18 +2,24 @@
 
 이 페이지에서는 Domain을 만들고, 앞에서 만든 Metric View 2개를 Domain에 연결합니다. Domain에 연결된 자산은 **Discover** 페이지에서 비즈니스 영역별로 찾아볼 수 있습니다.
 
-```mermaid
-flowchart LR
-    subgraph S1["1단계 · Domain 만들기"]
-        D["Domain<br/>wanderbricks_marketing"]
-        T["Governed Tag<br/>wanderbricks_marketing"]
-        D -- 함께 생성 --> T
-    end
-    T -- "2단계 · Tag 연결" --> MV1["mv_bookings"]
-    T -- "2단계 · Tag 연결" --> MV2["mv_reviews"]
-    MV1 -. "3단계 · Domain에 표시" .-> D
-    MV2 -. "3단계 · Domain에 표시" .-> D
-```
+<div class="wb-arch">
+  <div class="wb-arch__col">
+    <p class="wb-arch__label">1단계 · Domain 만들기</p>
+    <div class="wb-arch__node"><strong>Domain</strong><span>wanderbricks_<wbr>marketing</span></div>
+    <div class="wb-arch__node"><strong>Governed Tag</strong><span>wanderbricks_<wbr>marketing · 함께 생성</span></div>
+  </div>
+  <div class="wb-arch__flow" aria-hidden="true"></div>
+  <div class="wb-arch__col">
+    <p class="wb-arch__label">2단계 · Tag 연결</p>
+    <div class="wb-arch__node"><strong>mv_bookings</strong><span>Governed Tag 연결</span></div>
+    <div class="wb-arch__node"><strong>mv_reviews</strong><span>Governed Tag 연결</span></div>
+  </div>
+  <div class="wb-arch__flow" aria-hidden="true"></div>
+  <div class="wb-arch__col wb-arch__col--center">
+    <p class="wb-arch__label">3단계 · Domain에 표시</p>
+    <div class="wb-arch__node"><strong>Domain</strong><span>Metric View 2개 표시</span></div>
+  </div>
+</div>
 
 ## 1단계 - Domain 만들기
 

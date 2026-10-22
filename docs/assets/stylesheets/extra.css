@@ -58,3 +58,533 @@
 }
 .md-typeset .card.persona > div > :first-child { margin-top: 0; }
 .md-typeset .card.persona > div > :last-child { margin-bottom: 0; }
+
+/* Korean: wrap lines between words, never inside a word */
+html[lang="ko"] .md-typeset {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ===== Home page (docs/<lang>/index.md) ===== */
+.md-typeset {
+  --wb-navy: #1B3139;
+  --wb-lava: #FF3621;
+  --wb-lava-dark: #E02E1B;
+  --wb-oat: #F9F7F4;
+  --wb-line: #E7E3DC;
+  --wb-text: #3A4A50;
+  --wb-muted: #6B777C;
+}
+
+/* Hero: text on the left, Wanderbricks illustration bleeding to the right and bottom edges */
+.md-typeset .wb-hero {
+  --wb-art: 34rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--wb-art);
+  align-items: end;
+  column-gap: 1rem;
+  margin: 0 0 2.4rem;
+  padding: 0 0 0 2.4rem;
+  border-radius: 1rem;
+  /* The illustration's floor band is 100/1600 of its width; continue it across the hero */
+  background: linear-gradient(to top, #EFEAE3 calc(var(--wb-art) / 16), var(--wb-oat) calc(var(--wb-art) / 16));
+  overflow: hidden;
+}
+.md-typeset .wb-hero__text {
+  align-self: center;
+  padding: 2.4rem 0;
+}
+.md-typeset .wb-hero__eyebrow {
+  margin: 0;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--wb-lava);
+}
+.md-typeset .wb-hero h1 {
+  margin: 0.4rem 0 0.7rem;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--wb-navy);
+}
+.md-typeset .wb-hero h1 span { display: block; }
+.md-typeset .wb-hero h1 .headerlink { display: none; }
+.md-typeset .wb-hero__lead {
+  margin: 0 0 1.4rem;
+  max-width: 28rem;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--wb-text);
+}
+.md-typeset .wb-hero__actions p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+}
+.md-typeset .wb-hero__facts ul {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 0.5rem 1.6rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.md-typeset .wb-hero__facts li {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--wb-text);
+}
+.md-typeset .wb-hero__facts li::before { content: none; }
+.md-typeset .wb-hero__facts .twemoji { color: var(--wb-lava); }
+.md-typeset .wb-hero__art p { margin: 0; }
+.md-typeset .wb-hero__art img { display: block; width: 100%; height: auto; }
+
+/* Buttons used on the home page */
+.md-typeset .wb-hero .md-button,
+.md-typeset .wb-ready .md-button {
+  margin: 0;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--wb-navy);
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--wb-navy);
+  background: transparent;
+}
+.md-typeset .wb-hero .md-button:hover,
+.md-typeset .wb-ready .md-button:hover {
+  color: #fff;
+  background: var(--wb-navy);
+}
+.md-typeset .wb-hero .md-button--primary,
+.md-typeset .wb-ready .md-button--primary {
+  border-color: var(--wb-lava);
+  color: #fff;
+  background: var(--wb-lava);
+}
+.md-typeset .wb-hero .md-button--primary:hover,
+.md-typeset .wb-ready .md-button--primary:hover {
+  border-color: var(--wb-lava-dark);
+  background: var(--wb-lava-dark);
+}
+
+/* Persona cards */
+.md-typeset .wb-personas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+.md-typeset .wb-persona {
+  padding: 1rem 1rem 1.1rem;
+  border: 1px solid var(--wb-line);
+  border-radius: 0.8rem;
+  background: #fff;
+}
+.md-typeset .wb-persona > p:first-child { margin: 0 0 0.6rem; }
+.md-typeset .wb-persona > p:first-child img {
+  display: block;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background: var(--wb-oat);
+}
+.md-typeset .wb-persona__name {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--wb-navy);
+}
+.md-typeset .wb-persona__name span {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--wb-lava);
+}
+.md-typeset .wb-persona__role {
+  margin: 0.5rem 0 0;
+  font-size: 0.65rem;
+  line-height: 1.6;
+  color: var(--wb-text);
+}
+
+/* Journey: one card per step, the whole card is clickable */
+.md-typeset .wb-journey {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.2rem 0 2rem;
+}
+.md-typeset .wb-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.2rem minmax(0, 1fr) 14rem;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid var(--wb-line);
+  border-radius: 0.8rem;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.md-typeset .wb-step:hover {
+  border-color: rgba(255, 54, 33, 0.5);
+  box-shadow: 0 0.3rem 1.2rem rgba(27, 49, 57, 0.08);
+}
+.md-typeset .wb-step__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--wb-lava);
+}
+.md-typeset .wb-step__main > * { margin: 0; }
+.md-typeset .wb-step__title {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.md-typeset .wb-step__title a { color: var(--wb-navy); text-decoration: none; }
+.md-typeset .wb-step__title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.md-typeset .wb-step:hover .wb-step__title a { color: var(--wb-lava); }
+.md-typeset .wb-step__task {
+  margin-top: 0.25rem !important;
+  font-size: 0.72rem;
+  color: var(--wb-text);
+}
+.md-typeset .wb-step__desc {
+  margin-top: 0.2rem !important;
+  font-size: 0.65rem;
+  color: var(--wb-muted);
+}
+.md-typeset .wb-step__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.6rem !important;
+}
+.md-typeset .wb-step__tags span {
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: var(--wb-navy);
+  background: var(--wb-oat);
+}
+.md-typeset .wb-step__who p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+.md-typeset .wb-step__who img {
+  flex: 0 0 auto;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--wb-oat);
+}
+.md-typeset .wb-step__who--pair img + img { margin-left: -1.2rem; }
+.md-typeset .wb-step__who span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--wb-navy);
+}
+.md-typeset .wb-step__who small {
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 500;
+  color: var(--wb-muted);
+}
+
+/* Layered diagram: columns of nodes connected by arrows (home architecture, Step diagrams) */
+.md-typeset .wb-arch {
+  display: flex;
+  align-items: stretch;
+  margin: 1.2rem 0 2rem;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  background: var(--wb-oat);
+}
+.md-typeset .wb-arch__col {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+.md-typeset .wb-arch__col--uc {
+  margin: -0.5rem 0;
+  padding: 0.5rem;
+  border: 1.5px dashed rgba(27, 49, 57, 0.3);
+  border-radius: 0.7rem;
+}
+.md-typeset .wb-arch__label {
+  margin: 0 0 0.1rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--wb-muted);
+}
+.md-typeset .wb-arch__node {
+  position: relative;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--wb-line);
+  border-left: 3px solid var(--wb-navy);
+  border-radius: 0.5rem;
+  background: #fff;
+}
+.md-typeset .wb-arch__node strong {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--wb-navy);
+}
+.md-typeset .wb-arch__node span {
+  display: block;
+  font-size: 0.58rem;
+  line-height: 1.45;
+  color: var(--wb-muted);
+}
+.md-typeset .wb-arch__node em {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.55rem;
+  font-size: 0.5rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--wb-lava);
+}
+/* A column whose nodes sit in the vertical middle, e.g. a single source or result */
+.md-typeset .wb-arch__col--center > .wb-arch__label { margin-bottom: auto; }
+.md-typeset .wb-arch__col--center > .wb-arch__node:last-child { margin-bottom: auto; }
+.md-typeset .wb-arch__node--accent { border-left-color: var(--wb-lava); }
+.md-typeset .wb-arch__flow {
+  flex: 0 0 auto;
+  align-self: center;
+  margin: 0 0.35rem;
+  width: 0;
+  height: 0;
+  border-top: 0.4rem solid transparent;
+  border-bottom: 0.4rem solid transparent;
+  border-left: 0.5rem solid rgba(27, 49, 57, 0.35);
+}
+
+/* Step flow: a left-to-right sequence of steps; stacks vertically when its box is narrow */
+.md-typeset .wb-flow {
+  container-type: inline-size;
+  margin: 1.2rem 0 2rem;
+}
+.md-typeset .wb-flow__track {
+  display: flex;
+  align-items: stretch;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--wb-oat);
+}
+.md-typeset .wb-flow__item {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0.6rem 0.7rem 0.7rem;
+  border: 1px solid var(--wb-line);
+  border-top: 3px solid var(--wb-navy);
+  border-radius: 0.5rem;
+  background: #fff;
+}
+.md-typeset .wb-flow__item p { margin: 0; }
+.md-typeset .wb-flow__item small,
+.md-typeset .wb-flow__item strong,
+.md-typeset .wb-flow__item span { display: block; }
+.md-typeset .wb-flow__item small {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--wb-lava);
+}
+.md-typeset .wb-flow__item strong {
+  margin-top: 0.15rem;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: var(--wb-navy);
+}
+.md-typeset .wb-flow__item span {
+  margin-top: 0.2rem;
+  font-size: 0.58rem;
+  line-height: 1.45;
+  color: var(--wb-muted);
+}
+.md-typeset .wb-flow__item img {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin: 0 0 0.35rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--wb-oat);
+}
+.md-typeset .wb-flow__item img + img { margin-left: -0.7rem; }
+.md-typeset .wb-flow__item--optional {
+  border-style: dashed;
+  background: transparent;
+}
+.md-typeset .wb-flow__arrow {
+  flex: 0 0 auto;
+  align-self: center;
+  width: 0;
+  height: 0;
+  margin: 0 0.35rem;
+  border-top: 0.4rem solid transparent;
+  border-bottom: 0.4rem solid transparent;
+  border-left: 0.5rem solid rgba(27, 49, 57, 0.35);
+}
+@container (max-width: 36rem) {
+  .md-typeset .wb-flow__track { flex-direction: column; }
+  .md-typeset .wb-flow__arrow {
+    margin: 0.4rem 0;
+    border-top: 0.5rem solid rgba(27, 49, 57, 0.35);
+    border-right: 0.4rem solid transparent;
+    border-bottom: 0;
+    border-left: 0.4rem solid transparent;
+  }
+}
+
+/* Ready-to-start panel */
+.md-typeset .wb-ready {
+  margin: 1.2rem 0 1rem;
+  padding: 1.3rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+  background: var(--wb-oat);
+}
+.md-typeset .wb-ready ul { margin-top: 0; }
+.md-typeset .wb-ready > p:last-child { margin: 1.2rem 0 0; }
+
+/* Home page on narrower screens */
+@media screen and (max-width: 76.1875em) {
+  .md-typeset .wb-hero { --wb-art: 26rem; }
+  .md-typeset .wb-personas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media screen and (max-width: 59.9844em) {
+  .md-typeset .wb-hero { grid-template-columns: minmax(0, 1fr); padding: 0; background: var(--wb-oat); }
+  .md-typeset .wb-hero__text { padding: 1.8rem 1.4rem 0.6rem; }
+  .md-typeset .wb-hero h1 { font-size: 1.6rem; }
+  .md-typeset .wb-step { grid-template-columns: 2rem minmax(0, 1fr); gap: 0.8rem; }
+  .md-typeset .wb-step__num { width: 2rem; height: 2rem; font-size: 0.75rem; }
+  .md-typeset .wb-step__who { grid-column: 2; }
+  .md-typeset .wb-arch { flex-direction: column; gap: 0.6rem; }
+  .md-typeset .wb-arch__col--uc { margin: 0; }
+  .md-typeset .wb-arch__flow {
+    border-top: 0.5rem solid rgba(27, 49, 57, 0.35);
+    border-right: 0.4rem solid transparent;
+    border-bottom: 0;
+    border-left: 0.4rem solid transparent;
+  }
+}
+@media screen and (max-width: 44.9844em) {
+  .md-typeset .wb-personas { grid-template-columns: minmax(0, 1fr); }
+  .md-typeset .wb-persona {
+    display: grid;
+    grid-template-columns: 3.2rem minmax(0, 1fr);
+    column-gap: 0.9rem;
+  }
+  .md-typeset .wb-persona > p:first-child { grid-row: span 2; margin: 0; }
+  .md-typeset .wb-persona__role { grid-column: 2; }
+}
+
+/* ===== Screenshot zoom (assets/javascripts/zoom.js) ===== */
+.md-typeset img.wb-zoomable { cursor: zoom-in; }
+.wb-lightbox-open { overflow: hidden; }
+.wb-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.6rem 1.2rem;
+  background: rgba(15, 26, 30, 0.9);
+  cursor: zoom-out;
+  animation: wb-fade-in 0.15s ease-out;
+}
+.wb-lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.wb-lightbox__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+.wb-lightbox__close:hover,
+.wb-lightbox__close:focus-visible { background: rgba(255, 255, 255, 0.3); }
+.wb-lightbox__caption {
+  position: absolute;
+  bottom: 0.7rem;
+  left: 1.2rem;
+  right: 1.2rem;
+  margin: 0;
+  font-size: 0.7rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+}
+@keyframes wb-fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* ===== Page width: navigation further left, table of contents further right, wider content ===== */
+/* Applies when both sidebars are shown. The edge margin grows with the screen (up to 2.4rem),
+   so the content is never narrower than the theme's original 61rem layout. */
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 72rem;
+    padding: 0 clamp(0px, calc((100vw - 61rem) / 2), 2.4rem);
+  }
+}
+/* The home page keeps the original width its layout was designed for */
+body:has(.wb-hero) .md-grid { max-width: 61rem; padding: 0; }
+
+/* ===== Prompt box (!!! prompt "프롬프트"): text to type into Genie or Genie Code ===== */
+.md-typeset {
+  --md-admonition-icon--prompt: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2zM4 4v13.17L5.17 16H20V4zm2 3h12v2H6zm0 4h9v2H6z"/></svg>');
+}
+.md-typeset .admonition.prompt { background-color: var(--wb-oat); }
+.md-typeset .prompt > .admonition-title { color: var(--wb-navy); }
+.md-typeset .prompt > .admonition-title::before {
+  background-color: var(--wb-lava);
+  -webkit-mask-image: var(--md-admonition-icon--prompt);
+  mask-image: var(--md-admonition-icon--prompt);
+}
+/* Show the prompt as wrapped prose instead of a one-line code block; the copy button stays */
+.md-typeset .prompt pre > code {
+  padding: 0.8rem 2.6rem 0.8rem 1rem;
+  font-family: var(--md-text-font-family);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  color: var(--wb-navy);
+  background-color: #fff;
+}
