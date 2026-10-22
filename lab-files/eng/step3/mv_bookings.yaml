@@ -1,0 +1,124 @@
+version: 1.1
+comment: "Wanderbricks Booking Metric View. One row = one booking (silver_fact_bookings); booking customer information is joined from silver_dim_users. Data period: 2022-12 to 2025-07-30 (based on booking creation date, latest date 2025-07-30). Customer country values are uppercase full country names (e.g., UNITED STATES, SOUTH KOREA, INDIA). Booking status: pending / confirmed / cancelled / completed."
+source: <your_name>_wanderbricks_marketing.default.silver_fact_bookings
+joins:
+  - name: dim_user
+    source: <your_name>_wanderbricks_marketing.default.silver_dim_users
+    'on': source.user_id = dim_user.user_id
+dimensions:
+  - name: Booking Date
+    expr: CAST(source.created_at AS DATE)
+    comment: Date the booking was created (based on created_at). The latest data date is 2025-07-30.
+    display_name: Booking Date
+    synonyms: [booking creation date, date]
+    format:
+      type: date
+      date_format: year_month_day
+  - name: Booking Month
+    expr: "DATE_TRUNC('MONTH', source.created_at)"
+    comment: Month in which the booking was created (created_at truncated to month).
+    display_name: Booking Month
+    synonyms: [month, monthly]
+    format:
+      type: date
+      date_format: locale_short_month
+  - name: Check-in Month
+    expr: "DATE_TRUNC('MONTH', source.check_in)"
+    comment: Month of the check-in date (check_in). Used for travel (stay) time-based analysis.
+    display_name: Check-in Month
+    synonyms: [stay month, travel month]
+    format:
+      type: date
+      date_format: locale_short_month
+  - name: Booking Status
+    expr: source.status
+    comment: "Booking status. Values: pending (waiting) / confirmed (confirmed) / cancelled (cancelled) / completed (stay completed)."
+    display_name: Booking Status
+    synonyms: [status]
+  - name: Customer Country
+    expr: dim_user.country
+    comment: Country of the customer who made the booking. Uppercase full country name (e.g., UNITED STATES, SOUTH KOREA, JAPAN). Not country codes (US, KR).
+    display_name: Customer Country
+    synonyms: [country, nation, market]
+  - name: Customer Type
+    expr: dim_user.user_type
+    comment: "Customer type. Values: individual (individual customer) / business (business customer)."
+    display_name: Customer Type
+    synonyms: [customer segment, segment, user type, individual/business]
+  - name: Length of Stay
+    expr: |
+      CASE WHEN source.nights <= 2 THEN '1) 1-2 nights'
+           WHEN source.nights <= 4 THEN '2) 3-4 nights'
+           WHEN source.nights <= 7 THEN '3) 5-7 nights'
+           ELSE '4) 8+ nights' END
+    comment: Check-in to check-out length of stay (nights) bucketed into 1-2 nights / 3-4 nights / 5-7 nights / 8+ nights.
+    display_name: Length of Stay
+    synonyms: [stay duration, nights bucket]
+  - name: Guests
+    expr: source.guests_count
+    comment: Number of guests for one booking (guests_count).
+    display_name: Guests
+    synonyms: [guest count, number of people]
+measures:
+  - name: Booking Count
+    expr: COUNT(source.booking_id)
+    comment: Number of bookings. Includes all booking statuses (pending, confirmed, cancelled, completed).
+    display_name: Booking Count
+    synonyms: [number of bookings, booking volume, bookings]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 0
+  - name: Gross Booking Value
+    expr: SUM(source.total_amount)
+    comment: Sum of booking amounts (total_amount). Includes all booking statuses (pending, confirmed, cancelled, completed) and represents total transaction value (GBV). Currency is USD.
+    display_name: Gross Booking Value
+    synonyms: [booking amount, GBV, total transaction value]
+    format:
+      type: currency
+      currency_code: USD
+      decimal_places:
+        type: exact
+        places: 0
+  - name: Average Booking Value
+    expr: AVG(source.total_amount)
+    comment: Average amount per booking (average of total_amount). Includes all booking statuses.
+    display_name: Average Booking Value
+    synonyms: [average order value, average transaction value, AOV]
+    format:
+      type: currency
+      currency_code: USD
+      decimal_places:
+        type: exact
+        places: 2
+  - name: Cancellation Rate
+    expr: "COUNT(source.booking_id) FILTER (WHERE source.status = 'cancelled') / COUNT(source.booking_id)"
+    comment: Ratio of cancelled bookings (status = 'cancelled') to total bookings.
+    display_name: Cancellation Rate
+    synonyms: [cancel rate]
+    format:
+      type: percentage
+      decimal_places:
+        type: exact
+        places: 1
+  - name: Booking Customers
+    expr: COUNT(DISTINCT source.user_id)
+    comment: Number of unique customers who have made at least one booking (distinct user_id).
+    display_name: Booking Customers
+    synonyms: [booker count, customer count, unique bookers]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 0
+  - name: Average Length of Stay
+    expr: AVG(source.nights)
+    comment: Average number of nights per booking (nights).
+    display_name: Average Length of Stay
+    synonyms: [average nights, average stay duration, ALOS]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 2

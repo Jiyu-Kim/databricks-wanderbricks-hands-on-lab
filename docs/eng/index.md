@@ -270,7 +270,7 @@ A conversational interface that answers questions using data and business defini
   <div class="wb-arch__col wb-arch__col--uc">
     <p class="wb-arch__label">Unity Catalog · Domain</p>
     <div class="wb-arch__node"><strong>Metric View</strong><span>mv_bookings · mv_reviews (built on Silver)</span><em>Step 3</em></div>
-    <div class="wb-arch__node"><strong>Page</strong><span>Revenue · Realized revenue · Peak season</span><em>Step 4</em></div>
+    <div class="wb-arch__node"><strong>Page</strong><span>Revenue · Net Revenue · Peak Season</span><em>Step 4</em></div>
     <div class="wb-arch__node"><strong>Volume</strong><span>Marketing PDF documents</span><em>Step 4</em></div>
   </div>
   <div class="wb-arch__flow" aria-hidden="true"></div>

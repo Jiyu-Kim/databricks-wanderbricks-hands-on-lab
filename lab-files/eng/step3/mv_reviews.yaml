@@ -1,0 +1,80 @@
+version: 1.1
+comment: "Wanderbricks Review Metric View. One row = one review (silver_fact_reviews, excluding soft-deleted reviews); review author information is joined from silver_dim_users. One booking can have multiple reviews, so reviews are kept separate from the booking Metric View. Data period: 2023-03 to 2025-07-31. Customer country values are uppercase full country names (e.g., UNITED STATES, SOUTH KOREA)."
+source: <your_name>_wanderbricks_marketing.default.silver_fact_reviews
+joins:
+  - name: dim_user
+    source: <your_name>_wanderbricks_marketing.default.silver_dim_users
+    'on': source.user_id = dim_user.user_id
+dimensions:
+  - name: Review Date
+    expr: CAST(source.created_at AS DATE)
+    comment: Date the review was written (created_at).
+    display_name: Review Date
+    synonyms: [review creation date, written date]
+    format:
+      type: date
+      date_format: year_month_day
+  - name: Review Month
+    expr: "DATE_TRUNC('MONTH', source.created_at)"
+    comment: Month in which the review was written.
+    display_name: Review Month
+    synonyms: [month, monthly]
+    format:
+      type: date
+      date_format: locale_short_month
+  - name: Rating
+    expr: source.rating
+    comment: Review rating (integer 1–5).
+    display_name: Rating
+    synonyms: [star rating, score]
+  - name: Customer Country
+    expr: dim_user.country
+    comment: Country of the customer who wrote the review. Uppercase full country name (e.g., UNITED STATES, SOUTH KOREA). Not country codes.
+    display_name: Customer Country
+    synonyms: [country, nation, market]
+  - name: Customer Type
+    expr: dim_user.user_type
+    comment: "Customer type of the review author. Values: individual (individual customer) / business (business customer)."
+    display_name: Customer Type
+    synonyms: [customer segment, segment, user type]
+measures:
+  - name: Review Count
+    expr: COUNT(source.review_id)
+    comment: Number of reviews (excluding soft-deleted reviews).
+    display_name: Review Count
+    synonyms: [number of reviews, feedback count]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 0
+  - name: Average Rating
+    expr: AVG(source.rating)
+    comment: Average rating (1–5) of reviews.
+    display_name: Average Rating
+    synonyms: [average star rating, satisfaction]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 2
+  - name: Low Rating Share
+    expr: "COUNT(source.review_id) FILTER (WHERE source.rating <= 2) / COUNT(source.review_id)"
+    comment: Ratio of low-rating reviews (rating 2 or below) to total reviews.
+    display_name: Low Rating Share
+    synonyms: [dissatisfaction rate, low rating ratio]
+    format:
+      type: percentage
+      decimal_places:
+        type: exact
+        places: 1
+  - name: Reviewers
+    expr: COUNT(DISTINCT source.user_id)
+    comment: Number of unique customers who have written at least one review.
+    display_name: Reviewers
+    synonyms: [reviewer count]
+    format:
+      type: number
+      decimal_places:
+        type: exact
+        places: 0
