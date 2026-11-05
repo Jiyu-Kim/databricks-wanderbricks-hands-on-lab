@@ -54,6 +54,9 @@
 
     ![Catalog Explorer의 테이블 7개](../assets/images/01-lakeflow-pipeline/1-3-07-catalog-tables.png)
 
+    !!! tip "카탈로그 빨리 찾기"
+        카탈로그가 많으면 트리 위 검색창에 `<your_name>_wanderbricks_marketing`을 입력합니다. 해당 카탈로그만 남아 찾기 쉽습니다.
+
 2. `gold_customer_360`을 클릭하고 **Overview** 탭에서 컬럼 코멘트와 기본 키(`user_id`)가 등록된 것을 확인합니다.
 
     ![gold_customer_360 Overview](../assets/images/01-lakeflow-pipeline/1-3-08-gold-overview.png)

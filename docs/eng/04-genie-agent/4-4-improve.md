@@ -15,21 +15,21 @@ Finally, you'll rerun Benchmark and ask the 4.2 question again to verify the imp
 
 1. Click **Catalog** in the left sidebar, navigate to `<your_name>_wanderbricks_marketing` → `default` → `mv_bookings`, then click it.
 
-    ![Open mv_bookings](../assets/images/04-genie-agent/4-4-01-open-mv-bookings.png)
+    ![Open mv_bookings](../assets/images/eng/04-genie-agent/4-4-01-open-mv-bookings.png)
 
 2. Click **Edit** in the top right. When the edit screen opens in YAML, click **UI** in the top right. The left side of the edit screen now shows **Measures** (6) and **Fields** (8) lists.
 
-    ![Edit screen](../assets/images/04-genie-agent/4-4-02-edit-mode.png)
+    ![Edit screen](../assets/images/eng/04-genie-agent/4-4-02-edit-mode.png)
 
 ### 1.2) Add the `Revenue` measure
 
 1. Click the **+** button next to **Measures** (**Add measure**).
 
-    ![Add measure](../assets/images/04-genie-agent/4-4-03-add-measure.png)
+    ![Add measure](../assets/images/eng/04-genie-agent/4-4-03-add-measure.png)
 
 2. Click **Custom** next to **Expression** to enter a SQL expression directly.
 
-    ![Expression Custom](../assets/images/04-genie-agent/4-4-04-expression-custom.png)
+    ![Expression Custom](../assets/images/eng/04-genie-agent/4-4-04-expression-custom.png)
 
 3. Enter the values below. Enter **Expression** first—the name will auto-populate—then enter **Measure name** and **Display name**.
 
@@ -42,7 +42,7 @@ Finally, you'll rerun Benchmark and ask the 4.2 question again to verify the imp
     | **Synonyms** | `total revenue, revenue amount, gross revenue, sales` |
     | **Format** | Click field → select **$** for **Type** (**Currency**: US dollars) |
 
-    ![Enter Revenue measure](../assets/images/04-genie-agent/4-4-05-measure-revenue.png)
+    ![Enter Revenue measure](../assets/images/eng/04-genie-agent/4-4-05-measure-revenue.png)
 
 ### 1.3) Add the `Net Revenue` measure
 
@@ -57,13 +57,13 @@ Finally, you'll rerun Benchmark and ask the 4.2 question again to verify the imp
     | **Synonyms** | `realized revenue, actual revenue, net sales` |
     | **Format** | Click field → select **$** for **Type** (**Currency**: US dollars) |
 
-    ![Enter Net Revenue measure](../assets/images/04-genie-agent/4-4-06-measure-net-revenue.png)
+    ![Enter Net Revenue measure](../assets/images/eng/04-genie-agent/4-4-06-measure-net-revenue.png)
 
 ### 1.4) Add the `Season` field
 
 1. Click the **+** button next to **Fields** (**Add field**), then click **Custom** for **Expression**.
 
-    ![Add field](../assets/images/04-genie-agent/4-4-07-add-field.png)
+    ![Add field](../assets/images/eng/04-genie-agent/4-4-07-add-field.png)
 
 2. Enter **Expression** first, then enter the remaining values.
 
@@ -75,7 +75,7 @@ Finally, you'll rerun Benchmark and ask the 4.2 question again to verify the imp
     | **Comment** | `Peak season classification by check-in month. Peak = check-in in Jun, Jul, Aug (summer) + Dec (year-end), other months = off-peak. Values are exactly 'Peak' or 'Off-peak'; filter with equality (= 'Peak'). For "peak season in year N", filter the year with Check-in Year.` |
     | **Synonyms** | `peak season, off-peak season, high season, low season` |
 
-    ![Enter Season field](../assets/images/04-genie-agent/4-4-08-field-peak-season.png)
+    ![Enter Season field](../assets/images/eng/04-genie-agent/4-4-08-field-peak-season.png)
 
 ### 1.5) Add the `Check-in Year` field
 
@@ -89,7 +89,7 @@ Finally, you'll rerun Benchmark and ask the 4.2 question again to verify the imp
     | **Comment** | `Year of the check-in date (check_in). Used as the year filter for analysis based on check-in timing, such as peak/off-peak season.` |
     | **Synonyms** | `stay year, travel year, year of stay` |
 
-    ![Enter Check-in Year field](../assets/images/04-genie-agent/4-4-09-field-checkin-year.png)
+    ![Enter Check-in Year field](../assets/images/eng/04-genie-agent/4-4-09-field-checkin-year.png)
 
 ### 1.6) Clarify the `Gross Booking Value` description
 
@@ -97,7 +97,7 @@ Clarify in the Comment that `Gross Booking Value` is not revenue, so Genie doesn
 
 1. Click `Gross Booking Value` in the **Measures** list.
 
-    ![Select Gross Booking Value](../assets/images/04-genie-agent/4-4-10-select-gbv.png)
+    ![Select Gross Booking Value](../assets/images/eng/04-genie-agent/4-4-10-select-gbv.png)
 
 2. Add the text below to the end of **Comment**.
 
@@ -105,13 +105,13 @@ Clarify in the Comment that `Gross Booking Value` is not revenue, so Genie doesn
      Not revenue—use `Revenue` for revenue and `Net Revenue` for net revenue (realized revenue).
     ```
 
-    ![Update Gross Booking Value Comment](../assets/images/04-genie-agent/4-4-11-gbv-comment.png)
+    ![Update Gross Booking Value Comment](../assets/images/eng/04-genie-agent/4-4-11-gbv-comment.png)
 
 ### 1.7) Save and verify
 
 1. Click **Save** in the top right. Verify the list now shows **Measures** (8) and **Fields** (10).
 
-    ![Save](../assets/images/04-genie-agent/4-4-12-save.png)
+    ![Save](../assets/images/eng/04-genie-agent/4-4-12-save.png)
 
 2. In **SQL Editor**, run the query below to verify the new measures and fields work correctly.
 
@@ -130,7 +130,7 @@ Clarify in the Comment that `Gross Booking Value` is not revenue, so Genie doesn
     |---|---|---|---|
     | about $40.0M | about $14.0M | about $4.1M | 8,001 |
 
-    ![Verify query result](../assets/images/04-genie-agent/4-4-13-verify-query.png)
+    ![Verify query result](../assets/images/eng/04-genie-agent/4-4-13-verify-query.png)
 
 !!! info "UI edits preserve Tags"
     When you edit a Metric View via **Edit** in the UI, Governed Tags connected in 3.3 are retained. When editing via SQL, use `ALTER VIEW` instead of `CREATE OR REPLACE VIEW` to preserve Tags.
@@ -146,11 +146,11 @@ Clarify in the Comment that `Gross Booking Value` is not revenue, so Genie doesn
 
 1. Click **Discover** in the left sidebar.
 
-    ![Discover > Pages](../assets/images/04-genie-agent/4-4-14-discover-pages.png)
+    ![Discover > Pages](../assets/images/eng/04-genie-agent/4-4-14-discover-pages.png)
 
 2. Click **Create** in the top right → **Create page**.
 
-    ![Create page](../assets/images/04-genie-agent/4-4-15-create-page.png)
+    ![Create page](../assets/images/eng/04-genie-agent/4-4-15-create-page.png)
 
 3. Enter the content for **Page ① Revenue** below:
     - Click **Click to set page name** at the top to enter the name.
@@ -158,11 +158,11 @@ Clarify in the Comment that `Gross Booking Value` is not revenue, so Genie doesn
     - For **Synonyms**, click the **+** button to add each one, then press Enter.
     - The body has **Definition** and **Business use** headings pre-filled. Add content under each. Use the table button in the toolbar to insert a table, then delete extra rows and columns.
 
-    ![Enter Page](../assets/images/04-genie-agent/4-4-16-page-form.png)
+    ![Enter Page](../assets/images/eng/04-genie-agent/4-4-16-page-form.png)
 
 4. Click **Publish**.
 
-    ![Publish Page](../assets/images/04-genie-agent/4-4-17-page-publish.png)
+    ![Publish Page](../assets/images/eng/04-genie-agent/4-4-17-page-publish.png)
 
 5. Create **Page ② Net Revenue** and **Page ③ Peak Season** the same way and publish them.
 
@@ -249,11 +249,11 @@ Clarify in the Comment that `Gross Booking Value` is not revenue, so Genie doesn
 
 1. Click **Benchmark** at the top of the Genie Agent screen, then click **Run all benchmarks**.
 
-    ![Run all benchmarks](../assets/images/04-genie-agent/4-4-18-rerun-benchmarks.png)
+    ![Run all benchmarks](../assets/images/eng/04-genie-agent/4-4-18-rerun-benchmarks.png)
 
 2. Verify accuracy is now **100% accurate** (1/1) and the question **Assessment** changed to **Good**. Click the result to verify Genie used `` `Season` = 'Peak' `` and `` `Check-in Year` = 2024 `` to answer 8,001 bookings.
 
-    ![Benchmark result Good](../assets/images/04-genie-agent/4-4-19-benchmark-good.png)
+    ![Benchmark result Good](../assets/images/eng/04-genie-agent/4-4-19-benchmark-good.png)
 
 ### 3.2) Ask the Monitoring question again
 
@@ -266,7 +266,7 @@ Clarify in the Comment that `Gross Booking Value` is not revenue, so Genie doesn
 
 2. Verify Genie now uses `` MEASURE(`Revenue`) `` and answers INDIA's revenue as about $818K.
 
-    ![Revenue answer after improvement](../assets/images/04-genie-agent/4-4-20-revenue-after.png)
+    ![Revenue answer after improvement](../assets/images/eng/04-genie-agent/4-4-20-revenue-after.png)
 
 ### 3.3) Before / After
 

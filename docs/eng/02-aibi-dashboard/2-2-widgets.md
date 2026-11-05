@@ -9,6 +9,9 @@ On this page, you will manually create four **segment and distribution** widgets
 | 3 | Country Booking Frequency Breakdown | Bar (stacked, horizontal) | How repeat customer ratio differs by country |
 | 4 | Country Size vs. Customer Value | Scatter (bubble) | Whether countries with many customers also have high per-customer value |
 
+!!! info "Chart colors"
+    Chart colors in the screenshots depend on the dashboard theme. With the default theme, charts use blue and orange.
+
 ## Task 1 - Add datasets for segment and distribution widgets
 
 Histograms and bubble charts require data at a different row granularity than the `Customer 360` dataset. Create two more datasets.
@@ -32,7 +35,7 @@ Histograms and bubble charts require data at a different row granularity than th
 
 3. Click the `① Build It Yourself` tab at the top to switch to the first tab.
 
-    ![① Build It Yourself tab](../assets/images/02-aibi-dashboard/2-2-01-page-1.png)
+    ![① Build It Yourself tab](../assets/images/eng/02-aibi-dashboard/2-2-01-page-1.png)
 
 !!! info "Why create a separate `Spending Customers` dataset?"
     94% of customers (117,190 people) have no completed bookings and thus no lifetime spend. If you use `Customer 360` for the histogram, these customers are counted separately in a `nulls` bucket, making it hard to see the distribution of customers who actually spent money. That's why we create a dataset with only spending customers.
@@ -41,29 +44,29 @@ Histograms and bubble charts require data at a different row granularity than th
 
 Use **Recency** and **Frequency** as two axes to divide customers, and color cells by **average lifetime spend (Monetary)**.
 
-1. Click **Add a visualization** (chart icon) in the toolbar at the bottom, then click an empty area on the canvas to place the widget. A new widget appears with an input box (**Ask Genie Code to edit this chart...**), but on this tab you'll configure directly in the right panel.
+1. Click **Add a visualization** (chart icon) in the toolbar at the bottom, then click an empty area on the canvas to place the widget. A new widget appears with an input box (**Ask Genie Code to edit this chart...**), but on this tab you'll configure directly in the right panel. If an **All your data in one place** message appears the first time, close it.
 
-    ![Place segment widget](../assets/images/02-aibi-dashboard/2-2-18-add-segment-widget.png)
+    ![Place segment widget](../assets/images/eng/02-aibi-dashboard/2-2-18-add-segment-widget.png)
 
 2. Open the **Visualization** dropdown and scroll down to select **Heatmap**.
 
-    ![Select Heatmap](../assets/images/02-aibi-dashboard/2-2-19-heatmap-type.png)
+    ![Select Heatmap](../assets/images/eng/02-aibi-dashboard/2-2-19-heatmap-type.png)
 
 3. Click the **+** button next to **X axis**. Since there are multiple datasets, the field list is grouped by dataset. Expand **Customer 360** and select `recency_bucket`.
 
-    ![Expand dataset and select field](../assets/images/02-aibi-dashboard/2-2-20-heatmap-dataset.png)
+    ![Expand dataset and select field](../assets/images/eng/02-aibi-dashboard/2-2-20-heatmap-dataset.png)
 
 4. Select `booking_freq` for **Y axis** and `lifetime_spend` for **Color**.
 
-    ![Configure Heatmap fields](../assets/images/02-aibi-dashboard/2-2-21-heatmap-fields.png)
+    ![Configure Heatmap fields](../assets/images/eng/02-aibi-dashboard/2-2-21-heatmap-fields.png)
 
 5. Click `SUM(lifetime_spend)` under **Color** and select **AVG** under **Transform**. Now cells show **average spend by segment** instead of total.
 
-    ![Change Color aggregation to AVG](../assets/images/02-aibi-dashboard/2-2-22-heatmap-avg.png)
+    ![Change Color aggregation to AVG](../assets/images/eng/02-aibi-dashboard/2-2-22-heatmap-avg.png)
 
 6. Enable **Labels** at the bottom of the panel to show values in cells. Check **Title** at the top to add a title input. Enter the title `RFM Heatmap — Recency × Frequency`.
 
-    ![Heatmap complete](../assets/images/02-aibi-dashboard/2-2-23-heatmap-result.png)
+    ![Heatmap complete](../assets/images/eng/02-aibi-dashboard/2-2-23-heatmap-result.png)
 
 7. Verify that average spend grows substantially as booking frequency increases (moving down rows). For example, `1` row shows about $48–61, while `3+` row shows about $171–193.
 
@@ -76,17 +79,17 @@ Use **Recency** and **Frequency** as two axes to divide customers, and color cel
 
 2. Click the **+** button next to **X axis**. This time, expand **Spending Customers** and select `spender_ltv`.
 
-    ![Select field from Spending Customers dataset](../assets/images/02-aibi-dashboard/2-2-24-histogram-dataset.png)
+    ![Select field from Spending Customers dataset](../assets/images/eng/02-aibi-dashboard/2-2-24-histogram-dataset.png)
 
 3. Select **COUNT(\*)** for **Y axis**.
 
-4. Click `BIN(spender_ltv)` on the X axis and change **Bin size** to `100`. Lifetime spend will be divided into $100 brackets.
+4. Click `BIN(spender_ltv)` on the X axis and make sure **Bin size** is `100` (change it if it isn't). Lifetime spend will be divided into $100 brackets.
 
-    ![Bin size 100](../assets/images/02-aibi-dashboard/2-2-25-histogram-bin.png)
+    ![Bin size 100](../assets/images/eng/02-aibi-dashboard/2-2-25-histogram-bin.png)
 
 5. Check **Title** and enter the title `LTV Distribution (Spending Customers)`.
 
-    ![LTV Distribution widget](../assets/images/02-aibi-dashboard/2-2-26-histogram-result.png)
+    ![LTV Distribution widget](../assets/images/eng/02-aibi-dashboard/2-2-26-histogram-result.png)
 
 6. Verify that most lifetime spend is evenly distributed below $1,000, with only a few customers above $1,000.
 
@@ -96,27 +99,27 @@ Use **Recency** and **Frequency** as two axes to divide customers, and color cel
 
 2. Select `country_group` from **Customer 360** for **X axis**, **COUNT(\*)** for **Y axis**, and `booking_freq` for **Color**. Booking frequency values will stack within each bar.
 
-    ![Configure stacked bar fields](../assets/images/02-aibi-dashboard/2-2-27-stacked-fields.png)
+    ![Configure stacked bar fields](../assets/images/eng/02-aibi-dashboard/2-2-27-stacked-fields.png)
 
 3. Click the **⇅** (swap axes) icon between **X axis** and **Y axis** to switch to horizontal bars. Country names will be easier to read vertically.
 
-    ![Swap axes](../assets/images/02-aibi-dashboard/2-2-28-stacked-swap.png)
+    ![Swap axes](../assets/images/eng/02-aibi-dashboard/2-2-28-stacked-swap.png)
 
 4. Check **Title** and enter the title `Country Booking Frequency Breakdown`.
 
-    ![Country Booking Frequency Breakdown widget](../assets/images/02-aibi-dashboard/2-2-29-stacked-result.png)
+    ![Country Booking Frequency Breakdown widget](../assets/images/eng/02-aibi-dashboard/2-2-29-stacked-result.png)
 
 ## Task 5 - Country Size vs. Customer Value
 
 1. Click **Add a visualization** and place another widget to the right of the stacked bar. Select **Scatter** from **Visualization**.
 
-    ![Select Scatter](../assets/images/02-aibi-dashboard/2-2-30-bubble-type.png)
+    ![Select Scatter](../assets/images/eng/02-aibi-dashboard/2-2-30-bubble-type.png)
 
 2. Click the **+** button next to **X axis**. Expand **Country Summary** and select `customers`. Select `avg_ltv` for **Y axis**. Each point represents one country in this dataset.
 
 3. Select `total_spend` for **Size** and `country` for **Color**. Now you have a bubble chart where bubble size represents country-level total spend.
 
-    ![Configure bubble chart fields](../assets/images/02-aibi-dashboard/2-2-31-bubble-fields.png)
+    ![Configure bubble chart fields](../assets/images/eng/02-aibi-dashboard/2-2-31-bubble-fields.png)
 
 4. Check **Title** and enter the title `Country Size vs. Customer Value`.
 
@@ -129,7 +132,7 @@ Use **Recency** and **Frequency** as two axes to divide customers, and color cel
 
 1. Arrange the four widgets in a 2×2 layout.
 
-    ![Completed segment and distribution](../assets/images/02-aibi-dashboard/2-2-32-segment-result.png)
+    ![Completed segment and distribution](../assets/images/eng/02-aibi-dashboard/2-2-32-segment-result.png)
 
 !!! success "Congratulations!"
     You have manually created four segment and distribution widgets. On the next page, you will use Genie Code to create dashboard widgets with a single prompt.

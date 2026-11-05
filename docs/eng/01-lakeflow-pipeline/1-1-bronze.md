@@ -6,19 +6,19 @@ On this page, you'll create the pipeline and define Bronze tables that ingest th
 
 1. Click **New** in the top left of the sidebar, then click **ETL pipeline**.
 
-    ![New > ETL pipeline](../assets/images/01-lakeflow-pipeline/1-1-01-new-etl-pipeline.png)
+    ![New > ETL pipeline](../assets/images/eng/01-lakeflow-pipeline/1-1-01-new-etl-pipeline.png)
 
 2. The Lakeflow Pipelines Editor opens. Click the pipeline name at the top of the screen and enter `<your_name>_wanderbricks_customer_360`. For example, if your name is Jiyu, enter `jiyu_wanderbricks_customer_360`.
 
-    ![Pipeline name input](../assets/images/01-lakeflow-pipeline/1-1-02-pipeline-name.png)
+    ![Pipeline name input](../assets/images/eng/01-lakeflow-pipeline/1-1-02-pipeline-name.png)
 
-3. Click the default catalog and schema next to the pipeline name. Select the catalog `<your_name>_wanderbricks_marketing` (e.g., `jiyu_wanderbricks_marketing`) and schema `default`. All tables created by the pipeline will be stored in this location.
+3. Click the default catalog and schema next to the pipeline name. Select the catalog `<your_name>_wanderbricks_marketing` (e.g., `jiyu_wanderbricks_marketing`) and schema `default`, then click **Save**. All tables created by the pipeline will be stored in this location.
 
-    ![Select default catalog and schema](../assets/images/01-lakeflow-pipeline/1-1-03-default-catalog-schema.png)
+    ![Select default catalog and schema](../assets/images/eng/01-lakeflow-pipeline/1-1-03-default-catalog-schema.png)
 
-4. Select **SQL** as the source code language.
+4. Select **SQL** as the source code language. When the **Changing default language** dialog appears, click **Confirm**.
 
-    ![Select SQL language](../assets/images/01-lakeflow-pipeline/1-1-04-language-sql.png)
+    ![Select SQL language](../assets/images/eng/01-lakeflow-pipeline/1-1-04-language-sql.png)
 
 !!! info "Compute settings"
     The pipeline uses **Serverless compute** and **Unity Catalog** by default. For this lab, use the default settings as-is.
@@ -27,7 +27,7 @@ On this page, you'll create the pipeline and define Bronze tables that ingest th
 
 1. In the file browser, rename `my_transformation.sql` to `bronze.sql`. Hover over the file name and click **Rename** from the three-dot menu (⋮).
 
-    ![Rename file](../assets/images/01-lakeflow-pipeline/1-1-06-rename-file.png)
+    ![Rename file](../assets/images/eng/01-lakeflow-pipeline/1-1-06-rename-file.png)
 
 2. Clear all content in `bronze.sql` and paste the code below.
 
@@ -35,7 +35,7 @@ On this page, you'll create the pipeline and define Bronze tables that ingest th
     --8<-- "lab-files/eng/step1/bronze.sql"
     ```
 
-    ![Write bronze.sql](../assets/images/01-lakeflow-pipeline/1-1-07-bronze-code.png)
+    ![Write bronze.sql](../assets/images/eng/01-lakeflow-pipeline/1-1-07-bronze-code.png)
 
 3. Do not run the pipeline yet. Wait until you've written the Silver and Gold files, then run everything together in [1.3)](1-3-run.md).
 

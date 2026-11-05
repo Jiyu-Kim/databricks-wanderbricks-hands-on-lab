@@ -11,7 +11,7 @@ CREATE OR REFRESH MATERIALIZED VIEW gold_customer_360 (
   user_type         STRING    COMMENT '사용자 유형. 값: individual(개인 고객) / business(비즈니스 고객). is_business와 1:1 대응.',
   is_business       BOOLEAN   COMMENT '비즈니스(법인) 고객 여부(true/false).',
   lifetime_bookings BIGINT    COMMENT '생애 누적 예약 수(모든 상태 포함, 중복 없는 booking_id 기준).',
-  lifetime_spend    DOUBLE    COMMENT '생애 누적 지출액(통화 단위). status=completed 예약의 total_amount 합계. 예약이 없으면 NULL.',
+  lifetime_spend    DOUBLE    COMMENT '생애 누적 지출액(통화 단위). status=completed 예약의 total_amount 합계. completed 예약이 없으면 NULL.',
   avg_rating_given  DOUBLE    COMMENT '사용자가 남긴 리뷰의 평균 평점(1~5). soft-delete 리뷰 제외. 리뷰가 없으면 NULL.',
   last_booking_at   TIMESTAMP COMMENT '가장 최근 예약 생성 시각. 이탈 위험(최근 예약 없음) 판단 기준.',
   CONSTRAINT pk_gold_customer_360 PRIMARY KEY (user_id)

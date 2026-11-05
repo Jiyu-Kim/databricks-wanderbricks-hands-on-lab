@@ -30,7 +30,7 @@
     --8<-- "lab-files/kor/step2/customer_360_dataset.sql"
     ```
 
-4. **Run**을 클릭해 쿼리를 실행합니다. 결과가 124,385행인지 확인합니다.
+4. **Run**을 클릭해 쿼리를 실행하고, 아래에 결과 표가 나타나는지 확인합니다.
 
     ![데이터셋 쿼리 실행 결과](../assets/images/02-aibi-dashboard/2-1-05-dataset-run.png)
 
@@ -60,11 +60,11 @@
 
 대시보드에 탭 2개를 만듭니다. 첫 번째 탭에서는 위젯을 직접 만들고, 두 번째 탭에서는 Genie Code로 위젯을 만듭니다.
 
-1. 화면 상단의 **Canvas** 탭을 클릭해 캔버스로 돌아옵니다.
+1. **Data** 탭 옆의 페이지 탭(**Untitled page**)을 클릭해 캔버스로 돌아옵니다.
 
-    ![Canvas 탭](../assets/images/02-aibi-dashboard/2-1-07-canvas-tab.png)
+    ![페이지 탭](../assets/images/02-aibi-dashboard/2-1-07-canvas-tab.png)
 
-2. 화면 하단의 페이지 탭에서 기본 페이지 이름(**Untitled page**)을 더블클릭하고 `① 직접 만들기`로 바꿉니다.
+2. 이 페이지 탭의 이름(**Untitled page**)을 더블클릭하고 `① 직접 만들기`로 바꿉니다.
 
     ![첫 번째 탭 이름 바꾸기](../assets/images/02-aibi-dashboard/2-1-08-rename-page-1.png)
 

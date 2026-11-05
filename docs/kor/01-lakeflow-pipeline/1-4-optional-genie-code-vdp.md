@@ -21,14 +21,57 @@
 
 ## 2단계 - 프롬프트 입력하기
 
-1. Genie Code 입력창에 아래 프롬프트를 붙여넣고 전송합니다.
+1. Genie Code 입력창에 미리 채워진 문장이 있으면 지우고, 아래 프롬프트를 붙여넣어 전송합니다.
 
     !!! prompt "프롬프트"
         ```text
-        samples.wanderbricks의 users, bookings, reviews 테이블로 SQL 메달리온 파이프라인을 만들어줘. 파일은 bronze.sql, silver.sql, gold.sql 3개로 나눠줘.
-        - Bronze: bronze_users, bronze_bookings, bronze_reviews 스트리밍 테이블. 원천을 STREAM()으로 그대로 읽고 _ingested_at(current_timestamp), _source(원천 테이블명) 컬럼 추가
-        - Silver: silver_dim_users(email NULL 제거, email·name·country·user_type 표준화), silver_fact_bookings(total_amount > 0, check_out >= check_in, status는 pending/confirmed/cancelled/completed만, nights = datediff 추가), silver_fact_reviews(is_deleted = false, rating 1~5). 규칙은 CONSTRAINT ... EXPECT ... ON VIOLATION DROP ROW로 정의
-        - Gold: gold_customer_360 Materialized View. 고객 1명당 1행으로 lifetime_bookings(예약 수), lifetime_spend(completed 예약 금액 합계), avg_rating_given(평균 평점), last_booking_at(최근 예약일). 예약과 리뷰는 각각 user_id로 먼저 집계한 뒤 users에 LEFT JOIN해서 팬아웃을 막아줘. 컬럼마다 한국어 COMMENT를 달고 user_id를 PRIMARY KEY로 지정해줘
+        samples.wanderbricks의 users, bookings, reviews로 SQL 메달리온 파이프라인을 만들어줘.
+        파일은 bronze.sql / silver.sql / gold.sql 3개로 나눠줘.
+
+        ## Bronze (스트리밍 테이블)
+        - bronze_users, bronze_bookings, bronze_reviews
+        - 원천을 STREAM()으로 그대로 읽기
+        - 컬럼 추가: _ingested_at (current_timestamp), _source (원천 테이블명)
+        - 테이블마다 COMMENT, TBLPROPERTIES('quality'='bronze') 추가
+
+        ## Silver (스트리밍 테이블, bronze를 STREAM()으로 읽기)
+        공통
+        - 규칙은 CONSTRAINT ... EXPECT ... ON VIOLATION DROP ROW로 정의
+        - 각 PK/FK 컬럼은 NOT NULL 검증 추가
+        - 테이블마다 COMMENT, TBLPROPERTIES('quality'='silver') 추가
+        - 원천 컬럼은 유지하고 _ingested_at, _source는 제외
+
+        테이블별 규칙
+        - silver_dim_users
+          - email NULL 제거
+          - email·user_type은 lower(trim), name은 trim, country는 upper(trim)
+          - user_type은 individual/business만 허용 (위반 시 DROP 없이 기록만)
+          - company_name은 trim 후 빈 문자열이면 NULL로
+        - silver_fact_bookings
+          - total_amount > 0
+          - check_out >= check_in
+          - status는 pending/confirmed/cancelled/completed만
+          - nights = datediff(check_out, check_in) 추가
+        - silver_fact_reviews
+          - is_deleted = false (검증에 쓰이므로 컬럼은 유지)
+          - rating 1~5
+
+        ## Gold (Materialized View)
+        gold_customer_360: 고객 1명당 1행
+
+        컬럼
+        - 사용자 속성: user_id, name, country, user_type, is_business
+        - lifetime_bookings: 모든 상태의 예약 수 (booking_id 고유 개수, 예약 없으면 0)
+        - lifetime_spend: completed 예약 금액 합계 (소수 2자리, completed 예약이 없으면 NULL)
+        - avg_rating_given: 평균 평점 (소수 3자리, 리뷰 없으면 NULL)
+        - last_booking_at: 가장 최근 예약 생성 시각
+
+        조건
+        - bookings, reviews를 각각 user_id로 먼저 집계(CTE)한 뒤 silver_dim_users에 LEFT JOIN (팬아웃 방지)
+        - 컬럼 정의에 타입과 한국어 COMMENT를 명시
+        - user_id는 NOT NULL + PRIMARY KEY
+        - 컬럼 COMMENT에 값 범위·NULL 의미·PII 여부 등을 간단히 포함
+        - 테이블 COMMENT(용도: 세그먼트·LTV·이탈 분석, Genie 기준 테이블)와 TBLPROPERTIES('quality'='gold') 추가
         ```
 
     ![파이프라인 프롬프트 입력](../assets/images/01-lakeflow-pipeline/1-4-02-pipeline-prompt.png)
@@ -100,17 +143,17 @@
 
     ![Visual Data Prep 프롬프트](../assets/images/01-lakeflow-pipeline/1-4-08-designer-prompt.png)
 
-2. Genie Code가 만들 흐름을 요약해 보여 주며 확인을 요청합니다(**Auto-approve needs your confirmation**). 내용을 확인하고 **Allow**를 클릭합니다.
+2. Genie Code가 만들 흐름을 요약해 보여 주며 확인을 요청하면(**Auto-approve needs your confirmation**), 내용을 확인하고 **Allow**를 클릭합니다. 확인 요청 없이 바로 흐름이 만들어지기도 합니다.
 
     ![Allow로 승인](../assets/images/01-lakeflow-pipeline/1-4-09-designer-allow.png)
 
-3. 캔버스에 Source 2개 → Aggregate → Join → Select로 이어지는 흐름이 만들어지고, 아래 **Preview**에 입력과 출력 데이터가 표시됩니다. **Accept all**을 클릭해 반영합니다.
+3. 캔버스에 흐름(예: Source 2개 → Aggregate → Join → Select)이 만들어지고, 아래 **Preview**에 입력과 출력 데이터가 표시됩니다. 연산자 구성은 실행마다 다를 수 있습니다. **Accept**(또는 **Accept all**)를 클릭해 반영합니다.
 
     ![Visual Data Prep 흐름](../assets/images/01-lakeflow-pipeline/1-4-10-designer-flow.png)
 
 ## 6단계 - 연산자 설정 확인하기
 
-1. 캔버스에서 **Booking aggregation** 연산자를 클릭합니다. 오른쪽 패널에서 그룹 기준(**Group by**: `user_id`)과 집계 항목(**Aggregate by**: `lifetime_bookings`, `lifetime_spend`)을 화면으로 확인하고 바꿀 수 있습니다. 아래 **Preview**에서 연산자의 입력과 출력을 나란히 비교할 수 있습니다.
+1. 캔버스에서 집계(**Aggregate**) 연산자(예: **Booking aggregation**)를 클릭합니다. 연산자와 컬럼 이름은 실행마다 다를 수 있습니다. 오른쪽 패널에서 그룹 기준(**Group by**: `user_id`)과 집계 항목(**Aggregate by**: `lifetime_bookings`, `lifetime_spend`)을 화면으로 확인하고 바꿀 수 있습니다. 아래 **Preview**에서 연산자의 입력과 출력을 나란히 비교할 수 있습니다.
 
     ![Aggregate 연산자 설정](../assets/images/01-lakeflow-pipeline/1-4-11-designer-aggregate.png)
 

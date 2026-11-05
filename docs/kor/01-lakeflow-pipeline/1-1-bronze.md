@@ -12,11 +12,11 @@
 
     ![파이프라인 이름 입력](../assets/images/01-lakeflow-pipeline/1-1-02-pipeline-name.png)
 
-3. 파이프라인 이름 옆의 기본 카탈로그·스키마를 클릭합니다. 카탈로그는 사전 준비에서 만든 `<your_name>_wanderbricks_marketing`(예: `jiyu_wanderbricks_marketing`)을, 스키마는 `default`를 선택합니다. 파이프라인이 만드는 모든 테이블이 이 위치에 저장됩니다.
+3. 파이프라인 이름 옆의 기본 카탈로그·스키마를 클릭합니다. 카탈로그는 사전 준비에서 만든 `<your_name>_wanderbricks_marketing`(예: `jiyu_wanderbricks_marketing`)을, 스키마는 `default`를 선택한 뒤 **Save**를 클릭합니다. 파이프라인이 만드는 모든 테이블이 이 위치에 저장됩니다.
 
     ![기본 카탈로그와 스키마 선택](../assets/images/01-lakeflow-pipeline/1-1-03-default-catalog-schema.png)
 
-4. 소스 코드 언어로 **SQL**을 선택합니다.
+4. 소스 코드 언어로 **SQL**을 선택합니다. 기본 언어를 바꾼다는 확인 창(**Changing default language**)이 뜨면 **Confirm**을 클릭합니다.
 
     ![언어 SQL 선택](../assets/images/01-lakeflow-pipeline/1-1-04-language-sql.png)
 

@@ -27,7 +27,7 @@ A Domain is based on a Governed Tag. When you create a Domain, a Governed Tag wi
 
 1. Click **Discover** in the left sidebar, then click **Create** → **Create domain** in the top right.
 
-    ![Discover > Create domain](../assets/images/03-uc-semantics/3-3-04-create-domain.png)
+    ![Discover > Create domain](../assets/images/eng/03-uc-semantics/3-3-04-create-domain.png)
 
 2. Leave **Source** as **New tag**, and enter `<your_name>_wanderbricks_marketing` (e.g., `jiyu_wanderbricks_marketing`) in the input field on the right. Fill in the other fields as shown below, then click **Create**.
 
@@ -37,29 +37,29 @@ A Domain is based on a Governed Tag. When you create a Domain, a Governed Tag wi
     | **Description** | `A domain that collects the booking and review KPIs and business terms used by the Wanderbricks marketing team.` |
     | **Business Contacts** (optional) | Yourself |
 
-    ![Enter Domain information](../assets/images/03-uc-semantics/3-3-06-domain-form.png)
+    ![Enter Domain information](../assets/images/eng/03-uc-semantics/3-3-06-domain-form.png)
 
 3. The Domain is created in **Draft** status. Click **Publish** in the top right to make it visible to other users.
 
-    ![Publish Domain](../assets/images/03-uc-semantics/3-3-07-publish-domain.png)
+    ![Publish Domain](../assets/images/eng/03-uc-semantics/3-3-07-publish-domain.png)
 
 ## Task 2 - Link Tags to Metric Views
 
 1. In **Catalog**, navigate to `<your_name>_wanderbricks_marketing` → `default` → `mv_bookings`.
 
-    ![Open mv_bookings](../assets/images/03-uc-semantics/3-3-08-open-mv-bookings.png)
+    ![Open mv_bookings](../assets/images/eng/03-uc-semantics/3-3-08-open-mv-bookings.png)
 
 2. Scroll down to the **About this metric view** section, and click **Add tags** under **Tags**.
 
-    ![Add tags](../assets/images/03-uc-semantics/3-3-09-add-tags.png)
+    ![Add tags](../assets/images/eng/03-uc-semantics/3-3-09-add-tags.png)
 
 3. Type in **Key** to find and select `<your_name>_wanderbricks_marketing`, leave **Value** empty, and click **Save**.
 
-    ![Select tag and save](../assets/images/03-uc-semantics/3-3-10-select-tag-save.png)
+    ![Select tag and save](../assets/images/eng/03-uc-semantics/3-3-10-select-tag-save.png)
 
 4. Repeat the same process to link the tag to `mv_reviews`.
 
-    ![Link tag to mv_reviews](../assets/images/03-uc-semantics/3-3-11-tag-mv-reviews.png)
+    ![Link tag to mv_reviews](../assets/images/eng/03-uc-semantics/3-3-11-tag-mv-reviews.png)
 
 ??? tip "Link Tags with SQL"
     You can also link tags by running these queries in SQL Editor:
@@ -75,11 +75,11 @@ A Domain is based on a Governed Tag. When you create a Domain, a Governed Tag wi
 
 1. Click **Discover** in the left sidebar, then click **Domain** in the filter bar at the top. Search for your name and select `<your_name>_wanderbricks_marketing`.
 
-    ![Select Domain](../assets/images/03-uc-semantics/3-3-12-open-domain.png)
+    ![Select Domain](../assets/images/eng/03-uc-semantics/3-3-12-open-domain.png)
 
 2. Verify that `mv_bookings` and `mv_reviews` appear on the Domain page.
 
-    ![Metric Views linked to Domain](../assets/images/03-uc-semantics/3-3-13-domain-assets.png)
+    ![Metric Views linked to Domain](../assets/images/eng/03-uc-semantics/3-3-13-domain-assets.png)
 
 !!! info "Tags may take a few minutes to appear"
     It may take a few minutes for linked assets to show up on the Domain page. If you don't see them immediately, refresh after a moment.

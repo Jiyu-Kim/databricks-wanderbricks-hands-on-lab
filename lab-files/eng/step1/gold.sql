@@ -11,7 +11,7 @@ CREATE OR REFRESH MATERIALIZED VIEW gold_customer_360 (
   user_type         STRING    COMMENT 'User type. Values: individual (individual customer) / business (business customer). One-to-one mapping with is_business.',
   is_business       BOOLEAN   COMMENT 'Whether customer is business (corporate, true/false).',
   lifetime_bookings BIGINT    COMMENT 'Total number of bookings in customer lifetime (all statuses included, distinct booking_id).',
-  lifetime_spend    DOUBLE    COMMENT 'Total customer spend in customer lifetime (currency unit). Sum of total_amount for completed bookings. NULL if no bookings.',
+  lifetime_spend    DOUBLE    COMMENT 'Total customer spend in customer lifetime (currency unit). Sum of total_amount for completed bookings. NULL if no completed bookings.',
   avg_rating_given  DOUBLE    COMMENT 'Average rating of reviews left by customer (1–5 scale). Excludes soft-deleted reviews. NULL if no reviews.',
   last_booking_at   TIMESTAMP COMMENT 'Most recent booking creation timestamp. Used to assess churn risk (no recent bookings).',
   CONSTRAINT pk_gold_customer_360 PRIMARY KEY (user_id)

@@ -9,11 +9,11 @@ On this page, you'll register a question and ground-truth SQL in Benchmark, run 
 
 1. Click **Benchmark** at the top of the Genie Agent screen.
 
-    ![Benchmark tab](../assets/images/04-genie-agent/4-3-01-benchmarks-tab.png)
+    ![Benchmark tab](../assets/images/eng/04-genie-agent/4-3-01-benchmarks-tab.png)
 
 2. Verify the **Mode** at the top defaults to **Agent**, then click **Add benchmark**.
 
-    ![Add benchmark](../assets/images/04-genie-agent/4-3-02-add-benchmark.png)
+    ![Add benchmark](../assets/images/eng/04-genie-agent/4-3-02-add-benchmark.png)
 
 3. Enter the question below in **Question**.
 
@@ -32,21 +32,21 @@ On this page, you'll register a question and ground-truth SQL in Benchmark, run 
 
 5. Click **Run** to verify the ground-truth SQL result `8001` appears in **Preview**, then click **Add benchmark**.
 
-    ![Benchmark question and ground-truth SQL](../assets/images/04-genie-agent/4-3-03-benchmark-form.png)
+    ![Benchmark question and ground-truth SQL](../assets/images/eng/04-genie-agent/4-3-03-benchmark-form.png)
 
 ## Task 2 - Run the evaluation
 
 1. Click **Run all benchmarks**.
 
-    ![Run all benchmarks](../assets/images/04-genie-agent/4-3-04-run-benchmarks.png)
+    ![Run all benchmarks](../assets/images/eng/04-genie-agent/4-3-04-run-benchmarks.png)
 
 2. When evaluation completes, verify the accuracy is **0% accurate** (0/1).
 
-    ![Benchmark result Bad](../assets/images/04-genie-agent/4-3-05-benchmark-bad.png)
+    ![Benchmark result Bad](../assets/images/eng/04-genie-agent/4-3-05-benchmark-bad.png)
 
 3. Click the question in the left list. You can see **Assessment** is **Bad**, **Score reason** shows **Filter Issue**, and **Failure analysis** shows how Genie's SQL differs from the ground-truth SQL.
 
-    ![Compare Genie SQL vs. ground-truth SQL](../assets/images/04-genie-agent/4-3-06-benchmark-detail.png)
+    ![Compare Genie SQL vs. ground-truth SQL](../assets/images/eng/04-genie-agent/4-3-06-benchmark-detail.png)
 
 !!! warning "What went wrong?"
     The Metric View has no way to determine "peak season." So Genie either assumes different months arbitrarily (e.g. including November) or aggregates by booking date instead of check-in date, producing results different from the correct answer (8,001). The underlying problem is that **the business term "peak season" is not defined in the Metric View**.

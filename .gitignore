@@ -5,3 +5,4 @@ __pycache__/
 .DS_Store
 docs/kor/assets/
 docs/eng/assets/
+TEXT_FIXES_TODO.md

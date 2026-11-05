@@ -33,7 +33,7 @@
 
     ![프롬프트 입력](../assets/images/02-aibi-dashboard/2-3-03-prompt.png)
 
-2. Genie Code가 대시보드 구성과 데이터셋을 확인하고(**Thoughts**, **Read dashboard configuration** 등) 위젯을 만들어 캔버스에 배치합니다. 1~2분 정도 걸리며, 패널에 **Created widgets**와 요약이 표시될 때까지 기다립니다.
+2. Genie Code가 대시보드 구성과 데이터셋을 확인하고 위젯을 만들어 캔버스에 배치합니다. 패널에 표시되는 진행 단계의 이름은 화면마다 다를 수 있습니다. 1분 안팎이 걸리며, 패널에 요약이 표시될 때까지 기다립니다.
 
     ![Genie Code가 위젯을 만드는 중](../assets/images/02-aibi-dashboard/2-3-04-generating.png)
 

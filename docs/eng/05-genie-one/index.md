@@ -43,11 +43,11 @@ Genie One answers based on **Genie Ontology**. Genie Ontology combines Unity Cat
 
 1. Click the app switcher icon (**Switch apps**) in the top right, then click **Genie One**.
 
-    ![Open Genie One](../assets/images/05-genie-one/5-01-open-genie-one.png)
+    ![Open Genie One](../assets/images/eng/05-genie-one/5-01-open-genie-one.png)
 
 2. When the Genie One screen (**How can I help you?**) opens, check the input box.
 
-    ![Genie One screen](../assets/images/05-genie-one/5-02-genie-one-home.png)
+    ![Genie One screen](../assets/images/eng/05-genie-one/5-02-genie-one-home.png)
 
 ## Task 2 - Ask about term definitions
 
@@ -58,25 +58,25 @@ Genie One answers based on **Genie Ontology**. Genie Ontology combines Unity Cat
         How do revenue and net revenue differ at Wanderbricks? How much of each was there in 2024?
         ```
 
-    ![Enter question](../assets/images/05-genie-one/5-03-ask-revenue-definition.png)
+    ![Enter question](../assets/images/eng/05-genie-one/5-03-ask-revenue-definition.png)
 
 2. Verify Genie One explains the difference between revenue (confirmed/completed basis) and net revenue (completed basis) and gives 2024 amounts.
 
-    ![Revenue and net revenue answer](../assets/images/05-genie-one/5-04-revenue-answer.png)
+    ![Revenue and net revenue answer](../assets/images/eng/05-genie-one/5-04-revenue-answer.png)
 
 3. Click **Genie Ontology** (2) at the bottom of the answer to verify the sources are the **Revenue** and **Net Revenue** Pages you created in Step 4. The Page icon next to the definitions in the answer text also points to the same sources.
 
-    ![Page citation](../assets/images/05-genie-one/5-05-page-citation.png)
+    ![Page citation](../assets/images/eng/05-genie-one/5-05-page-citation.png)
 
 ## Task 3 - Open the source Page
 
 1. In the **Genie Ontology** menu, click **Revenue**.
 
-    ![Click citation](../assets/images/05-genie-one/5-06-click-citation.png)
+    ![Click citation](../assets/images/eng/05-genie-one/5-06-click-citation.png)
 
 2. Verify the right panel shows the `Revenue` Page you created in Step 4, displaying Domain, Synonyms, and Definition.
 
-    ![Revenue Page](../assets/images/05-genie-one/5-07-page-opened.png)
+    ![Revenue Page](../assets/images/eng/05-genie-one/5-07-page-opened.png)
 
 ## Task 4 - Ask about peak season
 
@@ -89,7 +89,7 @@ Genie One answers based on **Genie Ontology**. Genie Ontology combines Unity Cat
 
 2. Verify Genie One explains peak season as check-in months 6, 7, 8, and 12, and answers 2024 peak-season bookings as **8,001**. Click **Genie Ontology** (1) below the answer to see **Peak Season** Page as the source.
 
-    ![Peak season answer](../assets/images/05-genie-one/5-08-peak-season-answer.png)
+    ![Peak season answer](../assets/images/eng/05-genie-one/5-08-peak-season-answer.png)
 
 !!! tip "Number-only questions might route to Genie Agent"
     Questions like "Show me top 5 countries by revenue in 2024" that ask only for numbers might be routed by Genie One to the Genie Agent you created in Step 4, which shows the Genie Agent link as source instead of Pages. Including a definition request together makes it easier to see Pages as sources.

@@ -6,11 +6,11 @@ On this page, you will use **Genie Code** to create dashboard widgets with a sin
 
 1. Click the `② Build with Genie Code` tab at the top.
 
-    ![② Build with Genie Code tab](../assets/images/02-aibi-dashboard/2-3-01-page-2.png)
+    ![② Build with Genie Code tab](../assets/images/eng/02-aibi-dashboard/2-3-01-page-2.png)
 
 2. Click the **Genie Code** icon in the top right. The Genie Code panel opens on the right with an input field at the bottom.
 
-    ![Open Genie Code panel](../assets/images/02-aibi-dashboard/2-3-02-open-genie-code.png)
+    ![Open Genie Code panel](../assets/images/eng/02-aibi-dashboard/2-3-02-open-genie-code.png)
 
 ## Task 2 - Enter a prompt
 
@@ -31,11 +31,11 @@ On this page, you will use **Genie Code** to create dashboard widgets with a sin
     !!! tip "Why include definitions in the prompt?"
         Metrics like "Booking conversion rate" or "VIP customers" have multiple calculation methods. By specifying **which columns and how to calculate**, you ensure consistent results across users. Without definitions, Genie Code might choose different calculations (e.g., conversion as decimal 0.44 vs. percent, or VIP based on booking count instead of spend).
 
-    ![Enter prompt](../assets/images/02-aibi-dashboard/2-3-03-prompt.png)
+    ![Enter prompt](../assets/images/eng/02-aibi-dashboard/2-3-03-prompt.png)
 
-2. Genie Code reads the dashboard configuration and data (**Thoughts**, **Read dashboard configuration**, etc.) and creates widgets, placing them on the canvas. This takes 1–2 minutes. Wait until **Created widgets** and a summary appear in the panel.
+2. Genie Code reads the dashboard configuration and data, then creates widgets and places them on the canvas. The step names shown in the panel may vary. This takes about a minute. Wait until a summary appears in the panel.
 
-    ![Genie Code creating widgets](../assets/images/02-aibi-dashboard/2-3-04-generating.png)
+    ![Genie Code creating widgets](../assets/images/eng/02-aibi-dashboard/2-3-04-generating.png)
 
 ## Task 3 - Review results and refine
 
@@ -43,18 +43,23 @@ On this page, you will use **Genie Code** to create dashboard widgets with a sin
 
     | Item | Widget type (example) |
     |---|---|
-    | Total customers, Booking conversion rate, Total lifetime spend | 3 Counters (e.g., 124K / 43.9% / $4.1M) |
+    | Total customers, Booking conversion rate, Total lifetime spend | 3 Counters (e.g., 124,385 / 43.9% / $4.1M) |
     | Lifetime spend by customer segment | Bar |
     | Recent bookings by month | Line |
     | Customers by country | Bar (descending, `Other` → INDIA → CHINA) |
     | Booking frequency distribution | Pie |
     | Top 50 VIP customers | Table |
 
-    ![Widgets created by Genie Code](../assets/images/02-aibi-dashboard/2-3-05-result.png)
+    ![Widgets created by Genie Code](../assets/images/eng/02-aibi-dashboard/2-3-05-result.png)
 
-2. Widgets created by Genie Code are automatically applied to the canvas. If any widget has an error (**Unable to render visualization**) or needs adjusting, enter a follow-up request in the same panel. Below is an example of fixing a VIP table error with a follow-up request.
+2. Widgets created by Genie Code are automatically applied to the canvas. If any widget has an error (**Unable to render visualization**) or needs adjusting, enter a follow-up request in the same panel. Below is an example that switches the VIP table to the Customer 360 dataset with this follow-up request:
 
-    ![Fix widget with follow-up request](../assets/images/02-aibi-dashboard/2-3-06-accept.png)
+    !!! prompt "Prompt"
+        ```text
+        The Top 50 VIP Customers table uses a separate dataset. Change it to use the Customer 360 dataset, show only customers with lifetime spend, and delete the dataset that is no longer used.
+        ```
+
+    ![Update a widget with a follow-up request](../assets/images/eng/02-aibi-dashboard/2-3-06-accept.png)
 
 !!! tip "Results may vary slightly"
     Since Genie Code is a generative AI, the same prompt can produce slightly different widget types, layouts, and titles for each user. If the result doesn't match expectations, refine with follow-up requests like "Change the booking frequency distribution to a pie chart."
@@ -63,11 +68,11 @@ On this page, you will use **Genie Code** to create dashboard widgets with a sin
 
 1. Click **Publish** in the top right.
 
-    ![Publish](../assets/images/02-aibi-dashboard/2-3-07-publish.png)
+    ![Publish](../assets/images/eng/02-aibi-dashboard/2-3-07-publish.png)
 
 2. Keep the **Share data permission** option at default and click **Publish**. After the sharing settings window appears, close it and click **View published** at the top to see the published dashboard. The published version shows only the two page tabs without the **Data** tab.
 
-    ![Published dashboard](../assets/images/02-aibi-dashboard/2-3-08-published.png)
+    ![Published dashboard](../assets/images/eng/02-aibi-dashboard/2-3-08-published.png)
 
 !!! success "Congratulations!"
     You have completed the Customer 360 dashboard. However, metrics like "Booking conversion rate" and "VIP customers" are defined only in this dashboard's SQL, so if someone calculates them elsewhere, the numbers might differ. In the next Step, Ana will define business metrics using **Unity Catalog Semantics** so the whole organization sees the same numbers.

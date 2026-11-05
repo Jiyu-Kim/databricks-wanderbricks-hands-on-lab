@@ -45,31 +45,31 @@ After completing the lab, delete your assets in the order shown below. The delet
 
 1. **Genie Agent:** Open `<your_name> - Wanderbricks Marketing Assistant` in **Genie Agents**, click the kebab menu (⋮) in the top-right corner, and select **Move to trash**.
 
-    ![Delete Genie Agent](../assets/images/99-wrap-up/99-01-delete-genie-agent.png)
+    ![Delete Genie Agent](../assets/images/eng/99-wrap-up/99-01-delete-genie-agent.png)
 
 2. **Dashboard:** Open `<your_name> - Wanderbricks Customer 360` in **Dashboards**, click the kebab menu (⋮) in the top-right corner, select **File actions** → **Move to trash**.
 
-    ![Delete dashboard](../assets/images/99-wrap-up/99-02-delete-dashboard.png)
+    ![Delete dashboard](../assets/images/eng/99-wrap-up/99-02-delete-dashboard.png)
 
 3. **Page:** Go to **Discover** → **Pages** and open each of `Revenue`, `Net Revenue`, and `Peak Season` Pages, then click the kebab menu (⋮) → **Delete**.
 
-    ![Delete Page](../assets/images/99-wrap-up/99-03-delete-page.png)
+    ![Delete Page](../assets/images/eng/99-wrap-up/99-03-delete-page.png)
 
 4. **Domain:** Open the `<your_name>_wanderbricks_marketing` Domain in **Discover**, click **Edit** → **Remove domain**.
 
-    ![Delete Domain](../assets/images/99-wrap-up/99-04-delete-domain.png)
+    ![Delete Domain](../assets/images/eng/99-wrap-up/99-04-delete-domain.png)
 
 5. **Governed Tag:** Search for `<your_name>_wanderbricks_marketing` in **Catalog** → **Govern** → **Governed Tags**, open it, and click **Delete** in the top-right corner.
 
-    ![Delete Governed Tag](../assets/images/99-wrap-up/99-05-delete-governed-tag.png)
+    ![Delete Governed Tag](../assets/images/eng/99-wrap-up/99-05-delete-governed-tag.png)
 
 6. **Pipeline:** Click the kebab menu (⋮) next to `<your_name>_wanderbricks_customer_360` in **Jobs & Pipelines** and select **Delete**.
 
-    ![Delete pipeline](../assets/images/99-wrap-up/99-06-delete-pipeline.png)
+    ![Delete pipeline](../assets/images/eng/99-wrap-up/99-06-delete-pipeline.png)
 
 7. **Catalog:** Open `<your_name>_wanderbricks_marketing` in **Catalog**, click the kebab menu (⋮) to the right of the catalog name, and select **Delete**. All tables, Metric Views, and Volumes in the catalog will be deleted together.
 
-    ![Delete catalog](../assets/images/99-wrap-up/99-07-delete-catalog.png)
+    ![Delete catalog](../assets/images/eng/99-wrap-up/99-07-delete-catalog.png)
 
 ??? tip "Delete catalog with SQL"
     You can also delete the catalog and all assets inside it by running the following query in SQL Editor. Confirm the catalog name carefully—deletion cannot be undone.

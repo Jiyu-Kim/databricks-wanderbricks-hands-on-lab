@@ -6,11 +6,11 @@ On this page, you'll define 3 Silver tables that cleanse Bronze data with data q
 
 1. In the file browser, click the **+** icon next to the `transformations` folder, then click **Transformation**.
 
-    ![+ > Transformation](../assets/images/01-lakeflow-pipeline/1-2-01-add-transformation.png)
+    ![+ > Transformation](../assets/images/eng/01-lakeflow-pipeline/1-2-01-add-transformation.png)
 
 2. Rename the file to `silver`. Hover over the file name and click **Rename** from the three-dot menu (⋮).
 
-    ![Create silver file](../assets/images/01-lakeflow-pipeline/1-2-02-create-silver-file.png)
+    ![Create silver file](../assets/images/eng/01-lakeflow-pipeline/1-2-02-create-silver-file.png)
 
 3. Paste the code below into `silver.sql`.
 
@@ -18,7 +18,7 @@ On this page, you'll define 3 Silver tables that cleanse Bronze data with data q
     --8<-- "lab-files/eng/step1/silver.sql"
     ```
 
-    ![Write silver.sql](../assets/images/01-lakeflow-pipeline/1-2-03-silver-code.png)
+    ![Write silver.sql](../assets/images/eng/01-lakeflow-pipeline/1-2-03-silver-code.png)
 
 ### Understanding the code: Expectations
 
@@ -37,7 +37,7 @@ Silver tables define data quality rules with `CONSTRAINT ... EXPECT (...) ON VIO
 
 1. Use the same method: click the **+** icon next to the `transformations` folder → **Transformation**, and rename the file to `gold`.
 
-    ![Create gold file](../assets/images/01-lakeflow-pipeline/1-2-04-create-gold-file.png)
+    ![Create gold file](../assets/images/eng/01-lakeflow-pipeline/1-2-04-create-gold-file.png)
 
 2. Paste the code below into `gold.sql`.
 
@@ -45,11 +45,11 @@ Silver tables define data quality rules with `CONSTRAINT ... EXPECT (...) ON VIO
     --8<-- "lab-files/eng/step1/gold.sql"
     ```
 
-    ![Write gold.sql](../assets/images/01-lakeflow-pipeline/1-2-05-gold-code.png)
+    ![Write gold.sql](../assets/images/eng/01-lakeflow-pipeline/1-2-05-gold-code.png)
 
 3. Verify that your `transformations` folder contains 3 files: `bronze.sql`, `silver.sql`, and `gold.sql`.
 
-    ![Three files in transformations folder](../assets/images/01-lakeflow-pipeline/1-2-06-three-files.png)
+    ![Three files in transformations folder](../assets/images/eng/01-lakeflow-pipeline/1-2-06-three-files.png)
 
 ### Understanding the code: Customer 360
 
